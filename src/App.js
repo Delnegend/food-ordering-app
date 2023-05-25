@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useNavigate, BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
@@ -13,20 +14,30 @@ import ProfilePage from './ProfilePage';
 import HomePage from './HomePage'
 import { Button } from '@mui/material';
 
+function App() {
+  return (
+    <Router>
+      <Home />
+      <AccountMenu />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/profile" element={<ProfilePage />} />
+      </Routes>
+    </Router>
+  );
+}
 function Home() {
-  const [showHome, setShowHome] = React.useState(true);
-  const handleHome = () => {
-    setShowHome(true);
-  }
+  let navigate = useNavigate();
   return (
     <React.Fragment>
-      <Button
-        onClick={handleHome}
-        style={{ position: 'absolute', top: 0, left: 20 }}
-      >
-        Home
-      </Button>
-      {showHome && <HomePage />}
+      <Tooltip title="Home">
+        <Button
+          onClick={() => navigate('/')}
+          style={{ position: 'absolute', top: 0, left: 20 }}
+        >
+          Home
+        </Button>
+      </Tooltip>
     </React.Fragment>
   );
 }
@@ -39,11 +50,7 @@ function AccountMenu() {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
-  const [showProfile, setShowProfile] = React.useState(false);
-  const handleProfile = () => {
-    setShowProfile(true);
-  }
+  let navigate = useNavigate();
   return (
     <React.Fragment>
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
@@ -99,7 +106,7 @@ function AccountMenu() {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        <MenuItem onClick={handleProfile}>
+        <MenuItem onClick={() => navigate('/profile')}>
           <Avatar /> My account
         </MenuItem>
         <Divider />
@@ -116,11 +123,8 @@ function AccountMenu() {
           Logout
         </MenuItem>
       </Menu>
-    {showProfile && <ProfilePage />}
     </React.Fragment>
   );
 }
-export {
-  AccountMenu, 
-  Home
-};
+
+export default App
