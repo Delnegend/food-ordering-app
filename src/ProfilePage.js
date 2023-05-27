@@ -1,5 +1,5 @@
 import React from "react"
-import ReactDOM from 'react-dom/client' ;
+
 function Background() {
     return (
        <div id="Background"></div>
