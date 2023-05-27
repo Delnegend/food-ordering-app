@@ -10,7 +10,10 @@
 }
 
 .Homepage-body-food-selection{
-    float:center;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    max-width:60%;
 }
 
 #Homepage-body-search-bar{
