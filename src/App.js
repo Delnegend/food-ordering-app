@@ -10,8 +10,8 @@ import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
-import ProfilePage from './ProfilePage';
-import HomePage from './HomePage'
+import ProfilePage from './Homepage/Components/ProfilePage';
+import HomePage from './Homepage/Homepage';
 import { Button } from '@mui/material';
 
 function App() {
