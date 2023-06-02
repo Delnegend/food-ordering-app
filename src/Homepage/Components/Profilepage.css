@@ -12,9 +12,9 @@
     z-index: 0;
   }
   #Background{
-    position: relative;
-    background: linear-gradient(to bottom, #000000 80%, #333333 20%);
-    height: 100vh;
+    /* position: relative; */
+    background: linear-gradient(to bottom, #000000 90%, #333333 10%);
+    height: 91.7vh;
   }
   #ChangeAvatar{
     position: absolute;
@@ -89,7 +89,7 @@
     position: absolute;
     font-size: 15px;
     color:#333333;
-    top: 71%;
+    top: 55%;
     left: 40.6%;
     background-color:aquamarine;
   }
