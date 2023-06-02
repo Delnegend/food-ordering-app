@@ -1,5 +1,5 @@
 import React from "react"
-
+import './Profilepage.css'
 function Background() {
     return (
        <div id="Background"></div>
@@ -9,7 +9,7 @@ function Avatar() {
   return(
     <div id="BlockFromleft">
     <div id="Avatar"></div>
-    <p id="Profilepage-title">03 Profile Page</p>
+    {/* <p id="Profilepage-title">03 Profile Page</p> */}
     <a id="ChangeAvatar" href="*" >Thay ảnh đại diện</a>
     </div>
   )
