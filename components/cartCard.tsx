@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faPlusCircle, faMinusCircle, faTrash } from "@fortawesome/fontawesome-free-solid"
+import { faPlusCircle, faMinusCircle, faTrash } from "@fortawesome/free-solid-svg-icons"
 import { useState } from "react"
 
 function Item(props) {
