@@ -5,7 +5,7 @@ import FoodDetails from "./pages/FoodDetails";
 import Cart from "./pages/Cart";
 import MyOrders from "./pages/MyOrders";
 import Search from "./pages/Search";
-import Footbar from './components/Footbar'
+import Footbar from './components/FootBar/Footbar'
 export default function App() {
   return (
     <BrowserRouter>
