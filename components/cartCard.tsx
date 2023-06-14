@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPlusCircle, faMinusCircle, faTrash } from "@fortawesome/free-solid-svg-icons"
 import { useState } from "react"
 
-function Item(props) {
+function Item(props: any) {
     const [quantity, setQuantity] = useState(props.quantity)
 
     return (
