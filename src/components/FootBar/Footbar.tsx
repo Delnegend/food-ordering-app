@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useNavigate} from "react-router-dom";
-import '../styles/Footbar.css'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCompass, faLocationDot, faBagShopping, faHeart, faBell } from "@fortawesome/free-solid-svg-icons";
+import './Footbar.css'
 export default function Footbar() {
     let navigate = useNavigate();
-    const [activeIcon, setActiveIcon] = useState<number>(1);
+    const [activeIcon, setActiveIcon] = useState<number>(0);
     const handleIconClick = (index: number) => {
         setActiveIcon(index);
         navigate(getPageName(index)); 
@@ -26,34 +28,34 @@ export default function Footbar() {
         <nav className="footbar">
             <ul className="icon-list">
                 <li>
-                    <i className={`fa-solid ${'active'} fa-compass fa-2xl`}  />
+                    <FontAwesomeIcon icon={faCompass}  style={{color: "#FF7F50",}} size="2xl" />
                 </li>
                 <li>
                     <button
                      onClick={() => handleIconClick(0)}
                     >
-                        <i className={`fa-solid ${activeIcon === 0 ? 'active' : ''} fa-location-dot fa-2xl`}  />
+                        <FontAwesomeIcon icon={faLocationDot} className={`icon ${activeIcon === 0 ? 'active' : ''}`} size="2xl"/>
                     </button>
                 </li>
                 <li>
                     <button
                      onClick={() => handleIconClick(1)}
                     >
-                        <i className={`fa-solid ${activeIcon === 1 ? 'active' : ''} fa-bag-shopping fa-2xl`}  />
+                        <FontAwesomeIcon icon={faBagShopping} className={`icon ${activeIcon === 1 ? 'active' : ''}`} size="2xl" />
                     </button>
                 </li>
                 <li>
                     <button
                      onClick={() => handleIconClick(2)}
                     >
-                        <i className={`fa-solid ${activeIcon === 2 ? 'active' : ''} fa-heart fa-2xl`}  />
+                        <FontAwesomeIcon icon={faHeart} className={`icon ${activeIcon === 2 ? 'active' : ''}`} size="2xl" />
                     </button>
                 </li>
                 <li>
                     <button
                      onClick={() => handleIconClick(3)}
                     >
-                        <i className={`fa-solid ${activeIcon === 3 ? 'active' : ''} fa-bell fa-2xl`} />
+                    <FontAwesomeIcon icon={faBell} className={`icon ${activeIcon === 3 ? 'active' : ''}`} size="2xl" />
                     </button>
                 </li>
             </ul>
