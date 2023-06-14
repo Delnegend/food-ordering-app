@@ -1,0 +1,47 @@
+.Info{
+    position: relative;
+    font-family: 'Sofia Pro';
+    margin: 0px 10px 10px 10px;
+    width: 250px;
+    height: 150px;
+}
+
+.Name{
+    font: normal normal bold 40px/36px Sofia Pro;
+    padding: 2px 0px 8px 0px;
+}
+
+.Note{
+    font: normal normal normal 35/24px Sofia Pro;
+    color: #9a9dae;
+    padding: 0px 0px 10px 0px;
+}
+
+.Price{
+    font: normal normal bold 21px/15px Sofia Pro;
+    color: #fe724c;
+    padding: 10px 0px 10px 0px;
+}
+
+.Quantity{
+    font: normal normal bold 21px/15px Sofia Pro;
+    color: #1a1d26;
+    display: flex;
+    justify-content: end;
+    padding: 10px 0px 10px 0px;
+}
+
+#value{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 7px;
+}
+
+#delete{
+    position: absolute;
+    top: 0;
+    right: 0px;
+    width: 20px;
+    height: 20px;
+    color: #fe724c;
+}
