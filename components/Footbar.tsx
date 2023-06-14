@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate} from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCompass, faLocationDot, faBagShopping, faHeart, faBell } from "@fortawesome/free-solid-svg-icons";
-import './Footbar.css'
+import '../styles/Footbar.css'
 export default function Footbar() {
     let navigate = useNavigate();
     const [activeIcon, setActiveIcon] = useState<number>(0);
