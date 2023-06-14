@@ -10,11 +10,11 @@
     justify-content: center;
 }
 
-.icon {
+.fa-solid {
     color: #CACFD2;
 }
 
-.icon.active {
+.fa-solid.active {
     color: #FF7F50;
 }
 
