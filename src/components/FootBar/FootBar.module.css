@@ -30,6 +30,7 @@
   
 .icon-list li {
     margin-right: 50px;
+    user-select: none;
 }
   
 .icon-list button {

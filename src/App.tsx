@@ -5,11 +5,12 @@ import FoodDetails from "./pages/FoodDetails";
 import Cart from "./pages/Cart";
 import MyOrders from "./pages/MyOrders";
 import Search from "./pages/Search";
-import Footbar from './components/FootBar/Footbar'
+import FootBar from "./components/FootBar/Footbar";
+
 export default function App() {
   return (
     <BrowserRouter>
-      <Footbar/>
+      <FootBar/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signin" element={<SignIn />} />

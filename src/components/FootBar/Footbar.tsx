@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { useNavigate} from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCompass, faLocationDot, faBagShopping, faHeart, faBell } from "@fortawesome/free-solid-svg-icons";
-import './Footbar.css'
-export default function Footbar() {
+import styles  from './FootBar.module.css'
+export default function FootBar() {
     let navigate = useNavigate();
     const [activeIcon, setActiveIcon] = useState<number>(0);
     const handleIconClick = (index: number) => {
@@ -25,37 +23,37 @@ export default function Footbar() {
         }
     };
     return(
-        <nav className="footbar">
-            <ul className="icon-list">
+        <nav className={styles.footbar}>
+            <ul className={`${styles['icon-list']}`}>
                 <li>
-                    <FontAwesomeIcon icon={faCompass}  style={{color: "#FF7F50",}} size="2xl" />
+                    <i className="fa-solid fa-compass fa-2xl"  style={{color: "#FF7F50", cursor: 'default'}} />
                 </li>
                 <li>
                     <button
                      onClick={() => handleIconClick(0)}
                     >
-                        <FontAwesomeIcon icon={faLocationDot} className={`icon ${activeIcon === 0 ? 'active' : ''}`} size="2xl"/>
+                        <i className={`${styles['fa-solid']} ${activeIcon === 0 ? styles['active'] : ''} fa-solid fa-location-dot fa-2xl`}  />
                     </button>
                 </li>
                 <li>
                     <button
                      onClick={() => handleIconClick(1)}
                     >
-                        <FontAwesomeIcon icon={faBagShopping} className={`icon ${activeIcon === 1 ? 'active' : ''}`} size="2xl" />
+                        <i className={`${styles['fa-solid']} ${activeIcon === 1 ? styles['active'] : ''} fa-solid fa-shopping-bag fa-2xl`}  />
                     </button>
                 </li>
                 <li>
                     <button
                      onClick={() => handleIconClick(2)}
                     >
-                        <FontAwesomeIcon icon={faHeart} className={`icon ${activeIcon === 2 ? 'active' : ''}`} size="2xl" />
+                        <i className={`${styles['fa-solid']} ${activeIcon === 2 ? styles['active'] : ''} fa-solid fa-heart fa-2xl`}  />
                     </button>
                 </li>
                 <li>
                     <button
                      onClick={() => handleIconClick(3)}
                     >
-                    <FontAwesomeIcon icon={faBell} className={`icon ${activeIcon === 3 ? 'active' : ''}`} size="2xl" />
+                        <i className={`${styles['fa-solid']} ${activeIcon === 3 ? styles['active'] : ''} fa-solid fa-bell fa-2xl`}  />
                     </button>
                 </li>
             </ul>
