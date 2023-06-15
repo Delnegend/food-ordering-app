@@ -1,5 +1,8 @@
 import FoodCard from "../components/FoodCard/FoodCard"
 import CartCard from "../components/CartCard/CartCard"
+import Total from "../components/CartCard/Total"
+import TotalSum from "../components/CartCard/TotalSum"
+
 export default function Home() {
     const foodsample = [
         {
@@ -27,7 +30,7 @@ export default function Home() {
             note: 'Không ớt',
             price: 20000,
             image: 'https://hips.hearstapps.com/hmg-prod/images/banh-mi-with-grilled-pork1-1663331872.jpg?crop=0.683xw:1.00xh;0.317xw,0&resize=1200:*',
-            quantity: 1
+            quantity: 2
         },
         {
             name: 'Mì Ý',
@@ -75,6 +78,9 @@ export default function Home() {
                         )
                     })
                 }
+            <div>
+                <Total total={TotalSum(cartsample)}/>
+            </div>
         </>
     )
 }

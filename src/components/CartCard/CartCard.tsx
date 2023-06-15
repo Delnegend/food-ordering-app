@@ -28,6 +28,7 @@ function CartCard(props: CartCardProps) {
 }
 
 export default CartCard;
+export type { CartCardProps };
 
 
 
