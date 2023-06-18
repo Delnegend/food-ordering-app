@@ -10,7 +10,7 @@ import FootBar from "./components/FootBar/Footbar";
 export default function App() {
   return (
     <BrowserRouter>
-      <FootBar/>
+      <FootBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signin" element={<SignIn />} />
