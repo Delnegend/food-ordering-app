@@ -37,11 +37,11 @@ Clone this repository
 
 - If you're using `HTTPS`:
   ```
-  git clone https://github.com/Kwang1402/UCC-Food-app-UI.git
+  git clone https://github.com/USTH-Coders-Club/UCC-Food-app-UI.git
   ```
 - If you're using `SSH`:
   ```
-  git clone git@github.com:Kwang1402/UCC-Food-app-UI.git
+  git clone git@github.com:USTH-Coders-Club/UCC-Food-app-UI.git
   ```
 
 Change to `dev` branch
