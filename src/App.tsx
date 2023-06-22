@@ -6,6 +6,7 @@ import MyOrders from "./pages/MyOrders";
 import Search from "./pages/Search";
 import FootBar from "./components/FootBar/Footbar";
 import { RouteList } from "./assets/GlobalTypes";
+import NavBar from "./components/NavBar/NavBar";
 
 export default function App() {
     const routes: RouteList = [
@@ -23,6 +24,7 @@ export default function App() {
     return (
         <BrowserRouter>
             <FootBar routes={routes} />
+            <NavBar />
             <Routes>
                 {routes.map((route, index) => (
                     <Route key={index} path={route.path} element={route.page} />
