@@ -1,4 +1,4 @@
-.label{
+.label {
     border-top-left-radius: 9999px;
     border-top-right-radius: 9999px;
     border-bottom-right-radius: 9999px;
@@ -8,13 +8,13 @@
     margin: 10px;
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
 }
-.label:hover{
+.label:hover {
     background-color: #fe724c;
 }
-.label:hover .text{
+.label:hover .text {
     color: #fff;
 }
-.icon{
+.icon {
     padding: 10px;
     border-top-left-radius: 9999px;
     border-top-right-radius: 9999px;
@@ -25,11 +25,11 @@
     text-align: center;
 }
 
-.icon i{
+.icon i {
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.12);
 }
 
-.text{
+.text {
     margin-top: 10px;
     text-align: center;
     font-size: 15px;

@@ -1,3 +1,3 @@
 export default function FoodDetails() {
-  return <></>;
+    return <></>;
 }
