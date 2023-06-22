@@ -2,6 +2,7 @@ import FoodCard from "../components/FoodCard/FoodCard";
 import CartCard from "../components/CartCard/CartCard";
 import Total from "../components/CartCard/Total";
 import TotalSum from "../components/CartCard/TotalSum";
+import Label from "../components/CategoryLabel/Label";
 
 export default function Home() {
   const foodsample = [
@@ -78,6 +79,11 @@ export default function Home() {
         );
       })}
       <div>
+        <div style={{ display: "flex", flexWrap: "wrap" }}>
+          <Label name="Banh Mi" type="baguette" />
+          <Label name="Xoi" type="bowl-rice" />
+          <Label name="Mi tron" type="bowl-chopsticks-noodles" />
+        </div>
         <Total total={TotalSum(cartsample)} />
       </div>
     </>
