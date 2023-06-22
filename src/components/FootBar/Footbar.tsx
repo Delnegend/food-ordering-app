@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./FootBar.module.css";
 export default function FootBar() {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const [activeIcon, setActiveIcon] = useState<number>(1);
   const handleIconClick = (index: number) => {
     setActiveIcon(index);
