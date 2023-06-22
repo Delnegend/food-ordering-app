@@ -1,80 +1,22 @@
 import FoodCard from "../components/FoodCard/FoodCard";
-import CartCard from "../components/CartCard/CartCard";
-import Total from "../components/CartCard/Total";
-import TotalSum from "../components/CartCard/TotalSum";
-import Label from "../components/CategoryLabel/Label";
+import { ContainerCard } from "../assets/GlobalStyles";
+import { FoodList } from "../assets/GlobalTypes";
+
+import food_mock_data from "../_SAMPLE_DATA/food_mock.json";
 
 export default function Home() {
-  const foodsample = [
-    {
-      name: "Bánh Mì",
-      info: {
-        delivery_price: 20000,
-        time: 30,
-      },
-      taglist: ["Trứng", "Thịt", "Xúc xích"],
-      image:
-        "https://hips.hearstapps.com/hmg-prod/images/banh-mi-with-grilled-pork1-1663331872.jpg?crop=0.683xw:1.00xh;0.317xw,0&resize=1200:*",
-    },
-    {
-      name: "Mì Ý",
-      info: {
-        delivery_price: 20000,
-        time: 30,
-      },
-      taglist: ["Trứng", "Thịt", "Xúc xích"],
-      image:
-        "https://forza.com.vn/wp-content/uploads/2021/07/cach-lam-mi-y-thom-ngon-chuan-vi-tai-nha-6.jpeg",
-    },
-  ];
-  const cartsample = [
-    {
-      name: "Bánh Mì",
-      note: "Không ớt",
-      price: 20000,
-      image:
-        "https://hips.hearstapps.com/hmg-prod/images/banh-mi-with-grilled-pork1-1663331872.jpg?crop=0.683xw:1.00xh;0.317xw,0&resize=1200:*",
-      quantity: 2,
-    },
-    {
-      name: "Mì Ý",
-      note: "Không ớt",
-      price: 20000,
-      image:
-        "https://forza.com.vn/wp-content/uploads/2021/07/cach-lam-mi-y-thom-ngon-chuan-vi-tai-nha-6.jpeg",
-      quantity: 1,
-    },
-  ];
+  const food_mock: FoodList = food_mock_data;
   return (
-    <>
-      <div
-        style={{
-          display: "flex",
-          width: "100%",
-          flexWrap: "wrap",
-        }}
-      >
-        {foodsample.map((food, index) => {
-          return (
-            <FoodCard
-              key={index}
-              name={food.name}
-              info={food.info}
-              taglist={food.taglist}
-              image={food.image}
-            />
-          );
-        })}
-      </div>
-      {cartsample.map((food, index) => {
+    <div style={ContainerCard}>
+      {Object.entries(food_mock).map(([key, value]) => {
         return (
-          <CartCard
-            key={index}
-            name={food.name}
-            note={food.note}
-            price={food.price}
-            image={food.image}
-            quantity={food.quantity}
+          <FoodCard
+            key={key}
+            name={value.name}
+            price={value.price}
+            prepare_time={value.prepare_time}
+            taglist={value.taglist}
+            image={value.image}
           />
         );
       })}
