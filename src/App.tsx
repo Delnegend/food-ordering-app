@@ -6,11 +6,13 @@ import Cart from "./pages/Cart";
 import MyOrders from "./pages/MyOrders";
 import Search from "./pages/Search";
 import FootBar from "./components/FootBar/Footbar";
+import NavBar from "./components/NavBar/NavBar";
 
 export default function App() {
   return (
     <BrowserRouter>
       <FootBar />
+      <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signin" element={<SignIn />} />
