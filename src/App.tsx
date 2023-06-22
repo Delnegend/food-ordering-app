@@ -1,25 +1,32 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import SignIn from "./pages/SignIn";
-import FoodDetails from "./pages/FoodDetails";
 import Cart from "./pages/Cart";
 import MyOrders from "./pages/MyOrders";
 import Search from "./pages/Search";
 import FootBar from "./components/FootBar/Footbar";
-import NavBar from "./components/NavBar/NavBar";
+import { RouteList } from "./assets/GlobalTypes";
 
 export default function App() {
+  const routes: RouteList = [
+    { icon: "fa-house", path: "/", page: <Home /> },
+    {
+      icon: "fa-magnifying-glass",
+      path: "/search",
+      page: <Search />,
+    },
+    { icon: "fa-cart-shopping", path: "/cart", page: <Cart /> },
+    { icon: "fa-list", path: "/myorders", page: <MyOrders /> },
+    { icon: "fa-user", path: "/signin", page: <SignIn /> },
+  ];
+
   return (
     <BrowserRouter>
-      <FootBar />
-      <NavBar />
+      <FootBar routes={routes} />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/food" element={<FoodDetails />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/myorders" element={<MyOrders />} />
-        <Route path="/search" element={<Search />} />
+        {routes.map((route, index) => (
+          <Route key={index} path={route.path} element={route.page} />
+        ))}
       </Routes>
     </BrowserRouter>
   );
