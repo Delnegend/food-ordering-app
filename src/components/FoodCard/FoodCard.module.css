@@ -18,12 +18,10 @@
   font-size: 20px;
   font-weight: bold;
   margin: 10px;
-  font-family: "Open Sans", sans-serif;
 }
 .info {
   display: flex;
   margin: 10px;
-  font-family: "Open Sans", sans-serif;
   justify-items: center;
 }
 .info i {
@@ -36,12 +34,10 @@
   display: flex;
   flex-wrap: wrap;
   margin: 10px;
-  font-family: "Open Sans", sans-serif;
 }
 .tag {
   background-color: #f1f1f1;
   padding: 5px;
   border-radius: 5px;
   margin: 5px;
-  font-family: "Open Sans", sans-serif;
 }
