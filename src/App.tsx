@@ -8,26 +8,26 @@ import FootBar from "./components/FootBar/Footbar";
 import { RouteList } from "./assets/GlobalTypes";
 
 export default function App() {
-  const routes: RouteList = [
-    { icon: "fa-house", path: "/", page: <Home /> },
-    {
-      icon: "fa-magnifying-glass",
-      path: "/search",
-      page: <Search />,
-    },
-    { icon: "fa-cart-shopping", path: "/cart", page: <Cart /> },
-    { icon: "fa-list", path: "/myorders", page: <MyOrders /> },
-    { icon: "fa-user", path: "/signin", page: <SignIn /> },
-  ];
+    const routes: RouteList = [
+        { icon: "fa-house", path: "/", page: <Home /> },
+        {
+            icon: "fa-magnifying-glass",
+            path: "/search",
+            page: <Search />,
+        },
+        { icon: "fa-cart-shopping", path: "/cart", page: <Cart /> },
+        { icon: "fa-list", path: "/myorders", page: <MyOrders /> },
+        { icon: "fa-user", path: "/signin", page: <SignIn /> },
+    ];
 
-  return (
-    <BrowserRouter>
-      <FootBar routes={routes} />
-      <Routes>
-        {routes.map((route, index) => (
-          <Route key={index} path={route.path} element={route.page} />
-        ))}
-      </Routes>
-    </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            <FootBar routes={routes} />
+            <Routes>
+                {routes.map((route, index) => (
+                    <Route key={index} path={route.path} element={route.page} />
+                ))}
+            </Routes>
+        </BrowserRouter>
+    );
 }
