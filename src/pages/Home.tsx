@@ -1,8 +1,8 @@
 import FoodCard from "../components/FoodCard/FoodCard";
-import { ContainerCard } from "../assets/GlobalStyles";
 import { FoodList } from "../assets/GlobalTypes";
 import Label from "../components/CategoryLabel/Label";
 import food_mock_data from "../_SAMPLE_DATA/food_mock.json";
+import styles from "./Home.module.scss";
 
 export default function Home() {
     const food_mock: FoodList = food_mock_data;
