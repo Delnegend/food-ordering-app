@@ -7,7 +7,7 @@ export default function FootBar(props: { routes: RouteList }) {
     const navigate = useNavigate();
     const buttonData: RouteList = props.routes;
     const [currentPageIdx, setActiveIdx]: [number, (index: number) => void] =
-        useState<number>(1);
+        useState<number>(0);
 
     const handleIconClick = (pageIdx: number) => {
         setActiveIdx(pageIdx);
