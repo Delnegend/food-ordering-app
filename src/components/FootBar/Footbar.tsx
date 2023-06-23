@@ -17,19 +17,19 @@ export default function FootBar(props: { routes: RouteList }) {
     return (
         <nav className={styles.footbar}>
             <ul className={styles["icon-list"]}>
-                {buttonData.map((button, pageIdx) => (
-                    <li key={pageIdx}>
-                        <button onClick={() => handleIconClick(pageIdx)}>
-                            <i
-                                className={`${styles["fa-solid"]} ${
-                                    currentPageIdx === pageIdx
-                                        ? styles["active"]
-                                        : ""
-                                } fa-solid fa-2xl ${button.icon}`}
-                            />
-                        </button>
-                    </li>
-                ))}
+                {buttonData.map((button, pageIdx) => {
+                    const active_class =
+                        currentPageIdx === pageIdx ? styles["active"] : "";
+                    return (
+                        <li key={pageIdx}>
+                            <button onClick={() => handleIconClick(pageIdx)}>
+                                <i
+                                    className={`${styles["fa-solid"]} fa-solid fa-2xl ${button.icon} ${active_class}`}
+                                />
+                            </button>
+                        </li>
+                    );
+                })}
             </ul>
         </nav>
     );
