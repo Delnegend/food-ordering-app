@@ -3,7 +3,9 @@
 
 if ! command -v pnpm &> /dev/null
 then
+	npm run lint
 	npx commitlint --edit $1
 else
+	pnpm run lint
 	pnpm exec commitlint --edit $1
 fi
