@@ -3,7 +3,6 @@ import Home from "./pages/Home";
 import SignIn from "./pages/SignIn";
 import Cart from "./pages/Cart";
 import MyOrders from "./pages/MyOrders";
-import Search from "./pages/Search";
 import FootBar from "./components/FootBar/Footbar";
 import { RouteList } from "./assets/GlobalTypes";
 import NavBar from "./components/NavBar/NavBar";
@@ -11,11 +10,6 @@ import NavBar from "./components/NavBar/NavBar";
 export default function App() {
     const routes: RouteList = [
         { icon: "fa-house", path: "/", page: <Home /> },
-        {
-            icon: "fa-magnifying-glass",
-            path: "/search",
-            page: <Search />,
-        },
         { icon: "fa-cart-shopping", path: "/cart", page: <Cart /> },
         { icon: "fa-list", path: "/myorders", page: <MyOrders /> },
         { icon: "fa-user", path: "/signin", page: <SignIn /> },
