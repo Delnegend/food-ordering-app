@@ -6,7 +6,7 @@
     "scripts": {
         "dev": "vite --host 127.0.0.1",
         "build": "tsc && vite build",
-        "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0 && pnpm prettier --tab-width 4 --write .",
+        "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix && pnpm prettier --tab-width 4 --write .",
         "preview": "vite preview",
         "prepare": "husky install"
     },
