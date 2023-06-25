@@ -59,9 +59,7 @@ export default function HomeTopBar({ appName, avatarUrl }: HomeTopBarProps) {
                     ref={navRef}
                 >
                     <ul className={`${styles["tab-list"]}`}>
-                        <li>
-                            {avatarElement}
-                        </li>
+                        <li>{avatarElement}</li>
                         <li>
                             <span className={styles.username}>User Name</span>
                         </li>
@@ -104,5 +102,4 @@ export default function HomeTopBar({ appName, avatarUrl }: HomeTopBarProps) {
             <div className={styles.avatar_container}>{avatarElement}</div>
         </div>
     );
-};
-
+}
