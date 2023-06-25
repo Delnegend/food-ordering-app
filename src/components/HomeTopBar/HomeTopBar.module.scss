@@ -1,0 +1,173 @@
+@import "../../assets/GlobalVariables.scss";
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    // margin-bottom: 1rem;
+
+    $hamburger_and_profile_size: 3.5rem;
+
+    .hamburger_menu_container {
+        .toggle_btn {
+            background-color: white;
+            border: none;
+            border-radius: 15px;
+            box-shadow: $drop_shadow;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: $hamburger_and_profile_size;
+            height: $hamburger_and_profile_size;
+
+            &:hover {
+                background-color: #cacfd2;
+            }
+        }
+
+        .hamburger_menu {
+            width: calc(300px - 2rem);
+            height: 100vh;
+            background-color: white;
+            position: fixed;
+            left: 0;
+            top: 0;
+            transition: transform 0.3s;
+            transform: translateX(-100%);
+            padding: 2rem;
+
+            &.active {
+                transform: translateX(0);
+            }
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 5px;
+            margin-left: 10px;
+        }
+
+        .tab-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                user-select: none;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+            }
+
+            i {
+                height: 24px;
+                width: 24px;
+                margin-right: 20px;
+                margin-top: 20px;
+            }
+
+            button {
+                cursor: pointer;
+                background-color: transparent;
+                border: none;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                transition: background-color 0.3s ease-in-out;
+            }
+
+            button:hover {
+                background-color: rgba(0, 0, 0, 0.1);
+            }
+
+            span {
+                font-size: 20px;
+                font-weight: 500;
+                flex-grow: 1;
+                display: flex;
+                align-items: center;
+            }
+
+            .username {
+                font-weight: 600;
+                font-size: 25px;
+                margin-left: 10px;
+                user-select: text;
+            }
+
+            .email {
+                font-size: 15px;
+                color: gray;
+                margin-left: 10px;
+                margin-bottom: 20px;
+                user-select: text;
+            }
+
+            .log-out-button {
+                background-color: #ff7f50;
+                margin-top: 40px;
+                margin-left: 10px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                padding: 5px;
+                border-radius: 20px;
+                width: 135px;
+
+                &:hover {
+                    background-color: lightsalmon;
+                }
+
+                .log-out-icon {
+                    margin-left: 5px;
+                    margin-right: 10px;
+                    margin-top: 0;
+                    color: #ff7f50;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    background-color: white;
+                    padding: 4px;
+                }
+
+                .log-out {
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .app_name_container {
+        font-size: $app_name_font_size;
+        font-family: $app_name_font, sans-serif;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-top: 0.6rem;
+    }
+
+    .avatar_container {
+        border-radius: 9999px;
+        width: $hamburger_and_profile_size;
+        height: $hamburger_and_profile_size;
+        box-shadow: $drop_shadow;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i {
+            color: rgb(94, 94, 94);
+            font-size: 1rem;
+        }
+    }
+}

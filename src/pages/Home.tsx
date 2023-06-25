@@ -1,12 +1,15 @@
 import FoodCard from "../components/FoodCard/FoodCard";
-import { FoodList } from "../assets/GlobalTypes";
 import Label from "../components/CategoryLabel/Label";
+import HomeTopBar from "../components/HomeTopBar/HomeTopBar";
+import { FoodList } from "../assets/GlobalTypes";
+
 import food_mock_data from "../_SAMPLE_DATA/food_mock.json";
+import styles from "./Home.module.scss";
+
 type FoodType = {
     name: string;
     icon: string;
 };
-import styles from "./Home.module.scss";
 
 export default function Home() {
     const food_mock: FoodList = food_mock_data;
@@ -15,9 +18,13 @@ export default function Home() {
         { name: "Xôi", icon: "fa-bowl-rice" },
         { name: "Mì trộn", icon: "fa-bowl-chopsticks-noodles" },
     ];
+    const welcome_message = "Bạn muốn ăn gì?";
+    const appName = "UCC Food App";
 
     return (
         <div className={styles.container}>
+            <HomeTopBar avatarUrl="" appName={appName} />
+            <div className={styles.welcome_message}>{welcome_message}</div>
             <div className={styles.label_container}>
                 {food_types.map((value, index) => {
                     return (
