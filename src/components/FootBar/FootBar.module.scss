@@ -1,15 +1,22 @@
+@import "../../assets/GlobalVariables.scss";
+
 .footbar {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%;
+    margin: auto;
     height: 60px;
+    width: 100%;
     background-color: white;
-}
-.footbar ul {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+    z-index: 1;
+    ul {
+        margin: auto;
+        width: $page-width;
+        max-width: $page-max-width;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
 }
 
 .fa-solid {
