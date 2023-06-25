@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "./FootBar.module.css";
+import styles from "./FootBar.module.scss";
 import { RouteList } from "../../assets/GlobalTypes";
 
 export default function FootBar(props: { routes: RouteList }) {
