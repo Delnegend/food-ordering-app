@@ -1,7 +1,9 @@
+@import "../assets/GlobalVariables.scss";
+
 .container {
-    width: 90%;
-    max-width: 450px;
-    margin: 0 auto 60px auto;
+    width: $page-width;
+    max-width: $page-max-width;
+    margin: 1.6rem auto $footbar-height auto;
     display: flex;
     align-items: center;
     flex-direction: column;
