@@ -4,9 +4,9 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-  }
-  
-  .btn {
+}
+
+.btn {
     padding: 20px;
     border: none;
     border-radius: 20px;
@@ -15,25 +15,25 @@
     align-items: center;
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
-  
+
     i {
-      margin-right: 10px;
-      font-size: 24px;
-      color: red;
-      transition: all 0.25s ease-in-out;
+        margin-right: 10px;
+        font-size: 24px;
+        color: red;
+        transition: all 0.25s ease-in-out;
     }
-  
+
     &:hover {
-      background-color: red;
-      cursor: pointer;
-      color: #fff;
-  
-      i {
+        background-color: red;
+        cursor: pointer;
         color: #fff;
-      }
+
+        i {
+            color: #fff;
+        }
     }
-  
+
     &:active {
-      transform: scale(0.9);
+        transform: scale(0.9);
     }
-  }
+}
