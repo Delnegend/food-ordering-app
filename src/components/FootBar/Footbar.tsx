@@ -1,11 +1,18 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./FootBar.module.scss";
-import { RouteList } from "../../assets/GlobalTypes";
 
-export default function FootBar(props: { routes: RouteList }) {
+type FootbarProps = {
+    icon: string;
+    path: string;
+    page: JSX.Element;
+}[];
+
+export type { FootbarProps };
+
+export default function FootBar(props: { pages: FootbarProps }) {
     const navigate = useNavigate();
-    const buttonData: RouteList = props.routes;
+    const buttonData: FootbarProps = props.pages;
     const [currentPageIdx, setActiveIdx]: [number, (index: number) => void] =
         useState<number>(0);
 

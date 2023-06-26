@@ -1,5 +1,18 @@
 import styles from "./FoodCard.module.scss";
-import { FoodItem } from "../../assets/GlobalTypes";
+
+type FoodItem = {
+    name: string;
+    price: number;
+    prepare_time: number;
+    taglist: string[];
+    image: string;
+};
+
+type FoodList = {
+    [uuid: string]: FoodItem;
+};
+
+export type { FoodItem, FoodList };
 
 export default function FoodCard(props: FoodItem) {
     return (
