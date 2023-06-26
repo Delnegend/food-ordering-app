@@ -6,12 +6,15 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    // margin-bottom: 1rem;
 
     $hamburger_and_profile_size: 3.5rem;
 
-    .hamburger_menu_container {
-        .toggle_btn {
+    .hamburger__container {
+        $font-small: 1.2rem;
+        $font-large: 2rem;
+
+        z-index: 2;
+        .hamburger__button {
             background-color: white;
             border: none;
             border-radius: 15px;
@@ -27,122 +30,149 @@
             }
         }
 
-        .hamburger_menu {
-            width: calc(300px - 2rem);
-            height: 100vh;
+        nav {
+            $ham-padding-vertical: 2.4rem;
+            $ham-padding-horizontal: 2.2rem;
+
+            width: calc(340px - 2 * #{$ham-padding-horizontal});
+            height: calc(100vh - 2 * #{$ham-padding-vertical});
             background-color: white;
             position: fixed;
             left: 0;
             top: 0;
             transition: transform 0.3s;
             transform: translateX(-100%);
-            padding: 2rem;
+            padding: $ham-padding-vertical $ham-padding-horizontal;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
 
             &.active {
                 transform: translateX(0);
             }
         }
 
-        .avatar {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 5px;
-            margin-left: 10px;
+        .hamburger-info__container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            .hamburger-info__avatar {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                margin: 0 0 1rem 0;
+                box-shadow: $drop_shadow;
+                &.avatar-fa {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+
+            .hamburger-info__username {
+                font-weight: 600;
+                font-size: $font-large;
+                user-select: text;
+                font-family: $hamburger_menu_font;
+            }
+
+            .hamburger-info__email {
+                font-size: $font-small;
+                color: gray;
+                user-select: text;
+                font-family: $hamburger_menu_font;
+            }
         }
 
         .tab-list {
             list-style-type: none;
             padding: 0;
-            margin: 0;
+            margin: 1.8rem 0;
 
             li {
-                user-select: none;
-                list-style: none;
                 padding: 0;
                 margin: 0;
+                user-select: none;
+                list-style: none;
                 display: flex;
                 flex-direction: column;
-                justify-content: flex-end;
+                justify-content: center;
             }
 
             i {
-                height: 24px;
-                width: 24px;
-                margin-right: 20px;
-                margin-top: 20px;
+                margin-right: 1.2rem;
+                width: 2rem;
+                line-height: 1 !important;
+                font-size: $font-small;
             }
 
             button {
                 cursor: pointer;
-                background-color: transparent;
                 border: none;
-                overflow: hidden;
+                padding: 1rem 0;
                 display: flex;
-                align-items: center;
-                padding: 10px;
-                transition: background-color 0.3s ease-in-out;
-            }
-
-            button:hover {
-                background-color: rgba(0, 0, 0, 0.1);
-            }
-
-            span {
-                font-size: 20px;
-                font-weight: 500;
-                flex-grow: 1;
-                display: flex;
-                align-items: center;
-            }
-
-            .username {
-                font-weight: 600;
-                font-size: 25px;
-                margin-left: 10px;
-                user-select: text;
-            }
-
-            .email {
-                font-size: 15px;
-                color: gray;
-                margin-left: 10px;
-                margin-bottom: 20px;
-                user-select: text;
-            }
-
-            .log-out-button {
-                background-color: #ff7f50;
-                margin-top: 40px;
-                margin-left: 10px;
-                display: inline-flex;
                 align-items: center;
                 justify-content: center;
-                border: none;
-                padding: 5px;
-                border-radius: 20px;
-                width: 135px;
-
-                &:hover {
-                    background-color: lightsalmon;
-                }
-
-                .log-out-icon {
-                    margin-left: 5px;
-                    margin-right: 10px;
-                    margin-top: 0;
-                    color: #ff7f50;
-                    display: inline-flex;
-                    align-items: center;
+                background-color: transparent;
+                transition: background-color 0.3s ease-in-out;
+                i {
+                    display: flex;
                     justify-content: center;
-                    border-radius: 50%;
-                    background-color: white;
-                    padding: 4px;
+                    align-items: center;
+                }
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.1);
                 }
 
-                .log-out {
-                    color: white;
+                span {
+                    font-size: $font-small;
+                    font-weight: 500;
+                    flex-grow: 1;
+                    display: flex;
+                    align-items: center;
+                    font-family: $hamburger_menu_font;
+                    white-space: nowrap;
                 }
+            }
+        }
+
+        .log-out-button {
+            background-color: #ff7f50;
+            border: none;
+            border-radius: 9999px;
+            font-size: $font-small;
+            font-weight: bold;
+            margin: 0 auto;
+            padding: 0.8rem 1.2rem;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            bottom: 0;
+
+            &:hover {
+                background-color: lightsalmon;
+            }
+
+            .log-out-icon {
+                // margin-left: 5px;
+                // margin-right: 10px;
+                // margin-top: 0;
+                color: #ff7f50;
+                background-color: white;
+                // display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 9999px;
+                // background-color: white;
+                padding: 0.5rem;
+                font-size: 1rem;
+                line-height: 1 !important;
+                margin-right: 1rem;
+            }
+
+            .log-out-label {
+                color: white;
             }
         }
     }
