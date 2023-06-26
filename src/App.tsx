@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import { HomePageProps } from "./pages/Home";
 import SignIn from "./pages/SignIn";
 import Cart from "./pages/Cart";
 import MyOrders from "./pages/MyOrders";
 import FootBar from "./components/FootBar/Footbar";
-import { RouteList } from "./assets/GlobalTypes";
+import { FootbarProps } from "./components/FootBar/Footbar";
 
-import { HomePageProps } from "./pages/Home";
 import food_mock_data from "./_SAMPLE_DATA/food_mock.json";
 
 export default function App() {
@@ -28,7 +28,7 @@ export default function App() {
         userEmail: "",
     };
 
-    const routes: RouteList = [
+    const routes: FootbarProps = [
         { icon: "fa-house", path: "/", page: <Home {...HomePageData} /> },
         { icon: "fa-cart-shopping", path: "/cart", page: <Cart /> },
         { icon: "fa-list", path: "/myorders", page: <MyOrders /> },
@@ -37,7 +37,7 @@ export default function App() {
 
     return (
         <BrowserRouter>
-            <FootBar routes={routes} />
+            <FootBar pages={routes} />
             <Routes>
                 {routes.map((route, index) => (
                     <Route key={index} path={route.path} element={route.page} />

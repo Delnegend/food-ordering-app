@@ -1,11 +1,15 @@
 import styles from "./CartCard.module.css";
-import { FoodList } from "../../assets/GlobalTypes";
+import { FoodList } from "../FoodCard/FoodCard";
 
-export default function CartCard(props: {
+type CartCardProps = {
     uuid: string;
     quantity: number;
     foodList: FoodList;
-}) {
+};
+
+export type { CartCardProps };
+
+export default function CartCard(props: CartCardProps) {
     return (
         <div className={styles.container}>
             <img
