@@ -2,7 +2,7 @@ import FoodCard from "../components/FoodCard/FoodCard";
 import Label from "../components/CategoryLabel/Label";
 import { LabelProps } from "../components/CategoryLabel/Label";
 import HomeTopBar from "../components/HomeTopBar/HomeTopBar";
-import { FoodList } from "../assets/GlobalTypes";
+import { FoodList } from "../components/FoodCard/FoodCard";
 
 import styles from "./Home.module.scss";
 
