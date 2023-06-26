@@ -4,34 +4,34 @@ import { LabelProps } from "../components/CategoryLabel/Label";
 import HomeTopBar from "../components/HomeTopBar/HomeTopBar";
 import { FoodList } from "../assets/GlobalTypes";
 
-import food_mock_data from "../_SAMPLE_DATA/food_mock.json";
 import styles from "./Home.module.scss";
 
-export default function Home() {
-    const food_mock: FoodList = food_mock_data;
-    const food_types: LabelProps[] = [
-        { name: "Bánh mì", faIcon: "fa-baguette", type: "bread" },
-        { name: "Xôi", faIcon: "fa-bowl-rice", type: "rice" },
-        {
-            name: "Mì trộn",
-            faIcon: "fa-bowl-chopsticks-noodles",
-            type: "noodle",
-        },
-    ];
-    const welcome_message = "Bạn muốn ăn gì?";
-    const appName = "UCC Food App";
+type HomePageProps = {
+    food_list: FoodList;
+    food_types: LabelProps[];
+    welcome_message: string;
+    appName: string;
+    avatarUrl: string;
+    userName: string;
+    userEmail: string;
+};
 
+export type { HomePageProps };
+
+export default function Home(props: HomePageProps) {
     return (
         <div className={styles.container}>
             <HomeTopBar
-                avatarUrl=""
-                appName={appName}
-                userName=""
-                userEmail=""
+                avatarUrl={props.avatarUrl}
+                appName={props.appName}
+                userName={props.userName}
+                userEmail={props.userEmail}
             />
-            <div className={styles.welcome_message}>{welcome_message}</div>
+            <div className={styles.welcome_message}>
+                {props.welcome_message}
+            </div>
             <div className={styles.label_container}>
-                {food_types.map((value, index) => {
+                {props.food_types.map((value, index) => {
                     return (
                         <Label
                             key={index}
@@ -43,7 +43,7 @@ export default function Home() {
                 })}
             </div>
             <div className={styles.food_item_container}>
-                {Object.entries(food_mock).map(([key, value]) => {
+                {Object.entries(props.food_list).map(([key, value]) => {
                     return (
                         <FoodCard
                             key={key}
