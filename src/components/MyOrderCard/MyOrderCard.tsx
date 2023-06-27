@@ -1,5 +1,5 @@
 import styles from "./MyOrderCard.module.css";
-import { FoodItem } from "../../assets/GlobalTypes";
+import { FoodItem } from "../FoodCard/FoodCard";
 
 export default function MyOrderCard(props: FoodItem) {
     return (
