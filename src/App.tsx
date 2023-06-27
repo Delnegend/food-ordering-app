@@ -8,7 +8,7 @@ import FootBar from "./components/FootBar/Footbar";
 import { FootbarProps } from "./components/FootBar/Footbar";
 import FoodDetails from "./pages/FoodDetails";
 import { FoodDetailsProps } from "./pages/FoodDetails";
-import { foodDetailPath } from "./components/FoodCard/FoodCard";
+import { foodDetailPath } from "./assets/GlobalVariables";
 
 import food_mock_data from "./_SAMPLE_DATA/food_mock.json";
 
