@@ -21,11 +21,13 @@
         }
     }
     .welcome_message {
+        width: 100%;
         font-size: $welcome_message_font_size;
         font-family: $welcome_message_font, sans-serif;
         font-weight: 900;
         margin: 1.6rem 0;
         text-transform: capitalize;
+        text-align: left;
     }
     .food_item_container {
         display: flex;
