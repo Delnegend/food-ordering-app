@@ -18,14 +18,6 @@ export default function FoodDetails(props: FoodDetailsProps) {
     const food = props.foodList[uuid];
     const [quantity, setQuantity] = useState(props.cart[uuid] || 0);
 
-    useEffect(() => {
-        if (quantity === 0) {
-            delete props.cart[uuid];
-        } else {
-            props.cart[uuid] = quantity;
-        }
-    }, [quantity, props.cart, uuid]);
-
     return (
         <div className={styles.container}>
             <div className={styles["details-image__container"]}>
