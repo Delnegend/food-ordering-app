@@ -1,4 +1,4 @@
-import styles from "./MyOrderCard.module.css";
+import styles from "./MyOrderCard.module.scss";
 import { FoodItem } from "../FoodCard/FoodCard";
 
 export default function MyOrderCard(props: FoodItem) {
