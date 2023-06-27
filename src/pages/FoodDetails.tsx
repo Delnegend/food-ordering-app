@@ -1,8 +1,7 @@
 import styles from "./FoodDetails.module.scss";
 import { FoodList } from "../components/FoodCard/FoodCard";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import QuantitySelector from "../components/QuantitySelector/QuantitySelector";
-import { QuantitySelectorProps } from "../components/QuantitySelector/QuantitySelector";
 
 type FoodDetailsProps = {
     cart: {
