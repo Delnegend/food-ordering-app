@@ -1,0 +1,130 @@
+@import "../assets/GlobalVariables.scss";
+
+.container {
+    width: $page-width;
+    max-width: $page-max-width;
+    display: flex;
+    flex-direction: column;
+    margin: 2rem auto 0 auto;
+    z-index: 3;
+
+    $font-size-large: 2rem;
+    $font-size-medium: 1.4rem;
+    $font-size-small: 1.2rem;
+
+    $quantity-adjust-button-size: 2rem;
+
+    .details-image__container {
+        width: 100%;
+        padding-top: 60%;
+        position: relative;
+        overflow: hidden;
+        border-radius: 1rem;
+
+        .details-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        button {
+            $margin: 1rem;
+            $size: 3rem;
+
+            border: none;
+            border-radius: 0.8rem;
+            width: $size;
+            height: $size;
+            position: absolute;
+            top: $margin;
+            left: $margin;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(0.5rem);
+        }
+    }
+
+    .details-title {
+        font-size: $font-size-large;
+        font-family: $main-font;
+        font-weight: bold;
+        margin: 1rem 0;
+        color: $color-dark;
+    }
+
+    .details-eta {
+        color: $color-dark;
+        font-family: $main-font;
+        display: flex;
+        flex-direction: row;
+        gap: 0.4rem;
+
+        span:nth-child(1) {
+            color: $color-main;
+            margin-right: 0.2rem;
+        }
+    }
+
+    .details-price-quantity {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1.2rem 0 1rem 0;
+
+        .details-price {
+            font-size: $font-size-large;
+            font-family: $main-font;
+            font-weight: bold;
+            color: $color-main;
+
+            &::after {
+                content: " VNĐ";
+                font-size: $font-size-small;
+            }
+        }
+
+        .details-quantity__container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            button {
+                border: none;
+                border-radius: 9999px;
+                width: $quantity-adjust-button-size;
+                height: $quantity-adjust-button-size;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:disabled {
+                    opacity: 0.5;
+                }
+            }
+
+            .details-quantity-button__remove {
+                color: $color-main;
+                background-color: white;
+                border: 1px solid $color-main;
+            }
+
+            .details-quantity-button__add {
+                color: white;
+                background-color: $color-main;
+            }
+
+            .details-quantity {
+                font-family: $main-font;
+                font-size: $font-size-small;
+                margin: 0 1rem;
+                width: 1rem;
+                text-align: center;
+                color: $color-dark;
+            }
+        }
+    }
+}

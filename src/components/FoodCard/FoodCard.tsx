@@ -1,4 +1,5 @@
 import styles from "./FoodCard.module.scss";
+import { useNavigate } from "react-router-dom";
 
 type FoodItem = {
     name: string;
@@ -19,8 +20,22 @@ export type { FoodItem, FoodList };
 type FoodCardProps = FoodItem & {
     uuid: string;
 };
+
+const foodDetailPath = "/food-details/";
+
+export { foodDetailPath };
+
+export default function FoodCard(props: FoodCardProps) {
+    const navigate = useNavigate();
+    const openFoodDetails = (uuid: string) => {
+        navigate(foodDetailPath + uuid);
+    };
+
     return (
-        <div className={styles.container}>
+        <div
+            className={styles.container}
+            onClick={() => openFoodDetails(props.uuid)}
+        >
             <img className={styles.image} src={props.image} />
             <div className={styles.body}>
                 <div className={styles.foodname}>{props.name}</div>
