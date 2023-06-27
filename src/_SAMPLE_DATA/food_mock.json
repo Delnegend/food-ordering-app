@@ -4,7 +4,7 @@
         "price": 20000,
         "prepare_time": 30,
         "type": "bread",
-        "description": "",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "taglist": ["Trứng", "Thịt", "Xúc xích"],
         "image": "/src/_SAMPLE_DATA/banhmi.jpg"
     },
@@ -13,7 +13,7 @@
         "price": 20000,
         "prepare_time": 30,
         "type": "noodle",
-        "description": "",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "taglist": ["Trứng", "Thịt", "Xúc xích"],
         "image": "/src/_SAMPLE_DATA/miy.jpg"
     }

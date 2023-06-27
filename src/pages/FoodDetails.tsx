@@ -67,9 +67,17 @@ export default function FoodDetails(props: FoodDetailsProps) {
                     </button>
                 </div>
             </div>
-            <div className={styles["details-description"]}>
+            <div className={`${styles["details-description"]}`}>
                 {food.description}
             </div>
+            <button className={`${styles["add-to-cart-button"]}`}>
+                <i
+                    className={`${styles["cart-icon"]} fa-regular fa-shopping-cart fa-xl`}
+                ></i>
+                <span className={`${styles["cart-label"]}`}>
+                    Thêm vào giỏ hàng
+                </span>
+            </button>
         </div>
     );
 }
