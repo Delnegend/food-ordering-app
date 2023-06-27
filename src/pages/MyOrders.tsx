@@ -1,5 +1,5 @@
 import MyOrderCard from "../components/MyOrderCard/MyOrderCard";
-import { FoodList } from "../assets/GlobalTypes";
+import { FoodList } from "../components/FoodCard/FoodCard";
 import food_mock_data from "../_SAMPLE_DATA/food_mock.json";
 import styles from "./MyOrders.module.scss";
 
@@ -16,6 +16,8 @@ export default function MyOrders() {
                         prepare_time={value.prepare_time}
                         taglist={value.taglist}
                         image={value.image}
+                        type={value.type}
+                        description={value.description}
                     />
                 );
             })}
