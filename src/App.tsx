@@ -24,7 +24,7 @@ export default function App() {
                 type: "noodle",
             },
         ],
-        welcome_message: "Bạn muốn ăn gì?",
+        welcome_message: "Hôm nay bạn muốn ăn gì?",
         appName: "UCC Food App",
         avatarUrl: "",
         userName: "",
