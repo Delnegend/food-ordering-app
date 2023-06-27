@@ -47,11 +47,14 @@ export default function Home(props: HomePageProps) {
                     return (
                         <FoodCard
                             key={key}
+                            uuid={key}
                             name={value.name}
                             price={value.price}
                             prepare_time={value.prepare_time}
                             taglist={value.taglist}
                             image={value.image}
+                            type={value.type}
+                            description={value.description}
                         />
                     );
                 })}

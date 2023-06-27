@@ -6,6 +6,9 @@ import Cart from "./pages/Cart";
 import MyOrders from "./pages/MyOrders";
 import FootBar from "./components/FootBar/Footbar";
 import { FootbarProps } from "./components/FootBar/Footbar";
+import FoodDetails from "./pages/FoodDetails";
+import { FoodDetailsProps } from "./pages/FoodDetails";
+import { foodDetailPath } from "./components/FoodCard/FoodCard";
 
 import food_mock_data from "./_SAMPLE_DATA/food_mock.json";
 
@@ -35,6 +38,12 @@ export default function App() {
         { icon: "fa-user", path: "/signin", page: <SignIn /> },
     ];
 
+    // const cartItems: { [uuid: string]: number } = {}
+    const foodDetailsProps: FoodDetailsProps = {
+        cart: {},
+        foodList: food_mock_data,
+    };
+
     return (
         <BrowserRouter>
             <FootBar pages={routes} />
@@ -42,6 +51,10 @@ export default function App() {
                 {routes.map((route, index) => (
                     <Route key={index} path={route.path} element={route.page} />
                 ))}
+                <Route
+                    path={`${foodDetailPath}:foodId`}
+                    element={<FoodDetails {...foodDetailsProps} />}
+                />
             </Routes>
         </BrowserRouter>
     );
