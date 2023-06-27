@@ -3,14 +3,18 @@
         "name": "Bánh Mì",
         "price": 20000,
         "prepare_time": 30,
+        "type": "bread",
+        "description": "",
         "taglist": ["Trứng", "Thịt", "Xúc xích"],
-        "image": "https://hips.hearstapps.com/hmg-prod/images/banh-mi-with-grilled-pork1-1663331872.jpg?crop=0.683xw:1.00xh;0.317xw,0&resize=1200:*"
+        "image": "/src/_SAMPLE_DATA/banhmi.jpg"
     },
     "fef8b604-577e-4adc-98ce-c5fe98debbb6": {
         "name": "Mì Ý",
         "price": 20000,
         "prepare_time": 30,
+        "type": "noodle",
+        "description": "",
         "taglist": ["Trứng", "Thịt", "Xúc xích"],
-        "image": "https://forza.com.vn/wp-content/uploads/2021/07/cach-lam-mi-y-thom-ngon-chuan-vi-tai-nha-6.jpeg"
+        "image": "/src/_SAMPLE_DATA/miy.jpg"
     }
 }
