@@ -1,6 +1,8 @@
 import styles from "./FoodDetails.module.scss";
 import { FoodList } from "../components/FoodCard/FoodCard";
 import { useState, useEffect } from "react";
+import QuantitySelector from "../components/QuantitySelector/QuantitySelector";
+import { QuantitySelectorProps } from "../components/QuantitySelector/QuantitySelector";
 
 type FoodDetailsProps = {
     cart: {
@@ -41,23 +43,11 @@ export default function FoodDetails(props: FoodDetailsProps) {
             </div>
             <div className={styles["details-price-quantity"]}>
                 <div className={styles["details-price"]}>{food.price}</div>
-                <div className={styles["details-quantity__container"]}>
-                    <button
-                        className={styles["details-quantity-button__remove"]}
-                        disabled={quantity === 0}
-                        onClick={() => setQuantity(quantity - 1)}
-                    >
-                        <i className="fa-solid fa-minus"></i>
-                    </button>
-                    <div className={styles["details-quantity"]}>{quantity}</div>
-                    <button
-                        className={styles["details-quantity-button__add"]}
-                        onClick={() => setQuantity(quantity + 1)}
-                        disabled={quantity === maxQuantity}
-                    >
-                        <i className="fa-solid fa-plus"></i>
-                    </button>
-                </div>
+                <QuantitySelector
+                    maxQuantity={maxQuantity}
+                    quantity={quantity}
+                    setQuantity={setQuantity}
+                />
             </div>
             <div className={`${styles["details-description"]}`}>
                 {food.description}
