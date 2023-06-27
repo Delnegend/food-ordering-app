@@ -1,5 +1,6 @@
 import styles from "./FoodCard.module.scss";
 import { useNavigate } from "react-router-dom";
+import { foodDetailPath } from "../../assets/GlobalVariables";
 
 type FoodItem = {
     name: string;
@@ -20,10 +21,6 @@ export type { FoodItem, FoodList };
 type FoodCardProps = FoodItem & {
     uuid: string;
 };
-
-const foodDetailPath = "/food-details/";
-
-export { foodDetailPath };
 
 export default function FoodCard(props: FoodCardProps) {
     const navigate = useNavigate();
