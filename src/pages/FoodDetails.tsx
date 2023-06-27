@@ -24,7 +24,7 @@ export default function FoodDetails(props: FoodDetailsProps) {
         } else {
             props.cart[uuid] = quantity;
         }
-    }, [quantity]);
+    }, [quantity, props.cart, uuid]);
 
     return (
         <div className={styles.container}>
