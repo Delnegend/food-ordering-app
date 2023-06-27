@@ -27,24 +27,28 @@ export default function HomeTopBar({
     userEmail = userEmail ? userEmail : "example@example.com";
 
     const [isHamburgerMenuActive, setActiveHamburger] = useState(false);
-    const navRef = useRef<HTMLDivElement>(null);
-
-    const toggleHamburgerMenu = () => {
-        setActiveHamburger(!isHamburgerMenuActive);
-    };
+    const hamMenuRef = useRef<HTMLDivElement>(null);
+    const hamMenuInnerRef = useRef<HTMLDivElement>(null);
 
     const handleOutsideClick = (event: MouseEvent) => {
-        if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        const hamMenuExists: boolean = hamMenuRef.current !== null;
+        const hamMenuInnerExists: boolean = hamMenuInnerRef.current !== null;
+        const target: HTMLElement = event.target as HTMLElement;
+        const clickOutsideHamMenuInner =
+            hamMenuExists &&
+            hamMenuInnerExists &&
+            hamMenuRef.current?.contains(target) &&
+            !hamMenuInnerRef.current?.contains(target);
+        if (clickOutsideHamMenuInner) {
             setActiveHamburger(false);
         }
     };
 
     useEffect(() => {
         document.addEventListener("mousedown", handleOutsideClick);
-        return () => {
+        return () =>
             document.removeEventListener("mousedown", handleOutsideClick);
-        };
-    }, []);
+    }, [hamMenuRef, hamMenuInnerRef]);
 
     const isHamMenuActiveClass = isHamburgerMenuActive
         ? styles.active
@@ -65,53 +69,66 @@ export default function HomeTopBar({
             <div className={styles["hamburger__container"]}>
                 <button
                     className={styles["hamburger__button"]}
-                    onClick={toggleHamburgerMenu}
+                    onClick={() => setActiveHamburger(!isHamburgerMenuActive)}
                 >
                     <i className="fa-solid fa-bars fa-2xl"></i>
                 </button>
 
-                <nav className={isHamMenuActiveClass} ref={navRef}>
-                    <div className={styles["hamburger-top__container"]}>
-                        <div className={styles["hamburger-info__container"]}>
-                            <span
-                                className={`${styles["hamburger-info__avatar"]} ${avatarHamFAClass}`}
+                <nav className={isHamMenuActiveClass} ref={hamMenuRef}>
+                    <div
+                        className={styles["hamburger-inner__container"]}
+                        ref={hamMenuInnerRef}
+                    >
+                        <div className={styles["hamburger-top__container"]}>
+                            <div
+                                className={styles["hamburger-info__container"]}
                             >
-                                {avatarElement}
-                            </span>
-                            <span
-                                className={styles["hamburger-info__username"]}
-                            >
-                                {userName}
-                            </span>
-                            <span className={styles["hamburger-info__email"]}>
-                                {userEmail}
-                            </span>
+                                <span
+                                    className={`${styles["hamburger-info__avatar"]} ${avatarHamFAClass}`}
+                                >
+                                    {avatarElement}
+                                </span>
+                                <span
+                                    className={
+                                        styles["hamburger-info__username"]
+                                    }
+                                >
+                                    {userName}
+                                </span>
+                                <span
+                                    className={styles["hamburger-info__email"]}
+                                >
+                                    {userEmail}
+                                </span>
+                            </div>
+
+                            <ul className={`${styles["tab-list"]}`}>
+                                {Object.entries(subMenus).map(
+                                    ([key, value]) => {
+                                        return (
+                                            <li key={key}>
+                                                <button>
+                                                    <i
+                                                        className={`fa-duotone ${value} fa-2xl`}
+                                                    ></i>
+                                                    <span>{key}</span>
+                                                </button>
+                                            </li>
+                                        );
+                                    }
+                                )}
+                            </ul>
                         </div>
 
-                        <ul className={`${styles["tab-list"]}`}>
-                            {Object.entries(subMenus).map(([key, value]) => {
-                                return (
-                                    <li key={key}>
-                                        <button>
-                                            <i
-                                                className={`fa-duotone ${value} fa-2xl`}
-                                            ></i>
-                                            <span>{key}</span>
-                                        </button>
-                                    </li>
-                                );
-                            })}
-                        </ul>
+                        <button className={`${styles["log-out-button"]}`}>
+                            <i
+                                className={`${styles["log-out-icon"]} fa-regular fa-power-off fa-xl`}
+                            ></i>
+                            <span className={`${styles["log-out-label"]}`}>
+                                Log Out
+                            </span>
+                        </button>
                     </div>
-
-                    <button className={`${styles["log-out-button"]}`}>
-                        <i
-                            className={`${styles["log-out-icon"]} fa-regular fa-power-off fa-xl`}
-                        ></i>
-                        <span className={`${styles["log-out-label"]}`}>
-                            Log Out
-                        </span>
-                    </button>
                 </nav>
             </div>
 
