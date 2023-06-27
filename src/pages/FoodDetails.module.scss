@@ -12,8 +12,6 @@
     $font-size-medium: 1.4rem;
     $font-size-small: 1.2rem;
 
-    $quantity-adjust-button-size: 2rem;
-
     .details-image__container {
         width: 100%;
         padding-top: 60%;
@@ -85,47 +83,6 @@
                 font-size: $font-size-small;
             }
         }
-
-        .details-quantity__container {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-
-            button {
-                border: none;
-                border-radius: 9999px;
-                width: $quantity-adjust-button-size;
-                height: $quantity-adjust-button-size;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                &:disabled {
-                    opacity: 0.5;
-                }
-            }
-
-            .details-quantity-button__remove {
-                color: $color-main;
-                background-color: white;
-                border: 1px solid $color-main;
-            }
-
-            .details-quantity-button__add {
-                color: white;
-                background-color: $color-main;
-            }
-
-            .details-quantity {
-                font-family: $main-font;
-                font-size: $font-size-small;
-                margin: 0 1rem;
-                width: 1rem;
-                text-align: center;
-                color: $color-dark;
-            }
-        }
     }
     .details-description {
         color: $color-gray;
@@ -140,7 +97,7 @@
         border-radius: 9999px;
         font-size: $font-size-small;
         font-weight: bold;
-        margin: 5.0rem auto;
+        margin: 5rem auto;
         padding: 0.8rem 1.2rem;
         align-items: center;
         justify-content: center;
