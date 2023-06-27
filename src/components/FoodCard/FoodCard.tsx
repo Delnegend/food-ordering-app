@@ -6,6 +6,8 @@ type FoodItem = {
     prepare_time: number;
     taglist: string[];
     image: string;
+    type: string;
+    description: string;
 };
 
 type FoodList = {
@@ -14,7 +16,9 @@ type FoodList = {
 
 export type { FoodItem, FoodList };
 
-export default function FoodCard(props: FoodItem) {
+type FoodCardProps = FoodItem & {
+    uuid: string;
+};
     return (
         <div className={styles.container}>
             <img className={styles.image} src={props.image} />
