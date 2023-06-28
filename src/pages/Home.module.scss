@@ -1,8 +1,8 @@
 @import "../assets/GlobalVariables.scss";
 
 .container {
-    width: $page-width;
-    max-width: $page-max-width;
+    width: var(--page-width);
+    max-width: var(--page-max-width);
     margin: 1.6rem auto $footbar-height auto;
     display: flex;
     align-items: center;
