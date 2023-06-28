@@ -1,6 +1,7 @@
 import { vibrateDuration } from "../../assets/GlobalVariables";
 import styles from "./QuantitySelector.module.scss";
 
+
 type QuantitySelectorProps = {
     minQuantity?: number;
     maxQuantity?: number;
