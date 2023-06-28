@@ -2,6 +2,7 @@ import styles from "./CartCard.module.scss";
 import { FoodList } from "../FoodCard/FoodCard";
 import QuantitySelector from "../QuantitySelector/QuantitySelector";
 import { readablePrice } from "../../assets/GlobalVariables";
+import { vibrateDuration } from "../../assets/GlobalVariables";
 
 type CartCardProps = {
     uuid: string;
@@ -29,7 +30,10 @@ export default function CartCard(props: CartCardProps) {
                     </span>
                     <button
                         className={styles["cartcard-close-btn"]}
-                        onClick={() => props.setQuantity(0)}
+                        onClick={() => {
+                            props.setQuantity(0);
+                            navigator.vibrate(vibrateDuration);``
+                        }}
                     >
                         <i className="fa-solid fa-times"></i>
                     </button>

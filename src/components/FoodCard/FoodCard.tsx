@@ -1,6 +1,7 @@
 import styles from "./FoodCard.module.scss";
 import { useNavigate } from "react-router-dom";
 import { foodDetailPath } from "../../assets/GlobalVariables";
+import { vibrateDuration } from "../../assets/GlobalVariables";
 
 type FoodItem = {
     name: string;
@@ -25,6 +26,7 @@ type FoodCardProps = FoodItem & {
 export default function FoodCard(props: FoodCardProps) {
     const navigate = useNavigate();
     const openFoodDetails = (uuid: string) => {
+        navigator.vibrate(vibrateDuration);
         navigate(foodDetailPath + uuid);
     };
 
