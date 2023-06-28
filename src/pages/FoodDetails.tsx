@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-import { vibrateDuration } from "../assets/GlobalVariables";
+import { vibrateDuration, maxQuantityPerItem } from "../assets/GlobalVariables";
 import { FoodList } from "../components/FoodCard/FoodCard";
 import QuantitySelector from "../components/QuantitySelector/QuantitySelector";
 
@@ -12,16 +12,21 @@ type FoodDetailsProps = {
     };
     addCartItems: (uuid: string, quantity: number) => void;
     foodList: FoodList;
-    maxQuantity?: number;
 };
 
 export type { FoodDetailsProps };
 
 export default function FoodDetails(props: FoodDetailsProps) {
-    const maxQuantity = props.maxQuantity || 10;
     const uuid = window.location.pathname.split("/")[2];
     const food = props.foodList[uuid];
     const [quantity, setQuantity] = useState(0);
+    const maxQuantity = useRef(
+        maxQuantityPerItem - (props.cartItems[uuid] ?? 0)
+    );
+
+    useEffect(() => {
+        maxQuantity.current = maxQuantityPerItem - (props.cartItems[uuid] ?? 0);
+    }, [props.cartItems, uuid]);
 
     return (
         <div className={styles.container}>
@@ -53,7 +58,7 @@ export default function FoodDetails(props: FoodDetailsProps) {
                 <div className={styles["details-price-quantity"]}>
                     <div className={styles["details-price"]}>{food.price}</div>
                     <QuantitySelector
-                        maxQuantity={maxQuantity}
+                        maxQuantity={maxQuantity.current}
                         quantity={quantity}
                         setQuantity={setQuantity}
                     />
@@ -66,8 +71,8 @@ export default function FoodDetails(props: FoodDetailsProps) {
                 <button
                     className={styles["add-to-cart-button"]}
                     onClick={() => {
-                        props.addCartItems(uuid, quantity);
                         window.history.back();
+                        props.addCartItems(uuid, quantity);
                         navigator.vibrate(vibrateDuration);
                     }}
                 >
