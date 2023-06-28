@@ -28,10 +28,12 @@ export default function FoodDetails(props: FoodDetailsProps) {
                     src={food.image}
                     alt={food.name}
                 />
-                <button onClick={() => {
-                    window.history.back();
-                    navigator.vibrate(vibrateDuration);
-                }}>
+                <button
+                    onClick={() => {
+                        window.history.back();
+                        navigator.vibrate(vibrateDuration);
+                    }}
+                >
                     <i className="fa-thin fa-arrow-left"></i>
                 </button>
             </div>

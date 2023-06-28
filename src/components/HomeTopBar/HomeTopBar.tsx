@@ -113,7 +113,11 @@ export default function HomeTopBar({
                                         return (
                                             <li key={key}>
                                                 <button
-                                                    onClick={() => navigator.vibrate(vibrateDuration)}
+                                                    onClick={() =>
+                                                        navigator.vibrate(
+                                                            vibrateDuration
+                                                        )
+                                                    }
                                                 >
                                                     <i
                                                         className={`fa-duotone ${value} fa-2xl`}
@@ -127,7 +131,10 @@ export default function HomeTopBar({
                             </ul>
                         </div>
 
-                        <button className={`${styles["log-out-button"]}`} onClick={() => navigator.vibrate(vibrateDuration)}>
+                        <button
+                            className={`${styles["log-out-button"]}`}
+                            onClick={() => navigator.vibrate(vibrateDuration)}
+                        >
                             <i
                                 className={`${styles["log-out-icon"]} fa-regular fa-power-off fa-xl`}
                             ></i>
