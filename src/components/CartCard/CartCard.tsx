@@ -11,8 +11,8 @@ import styles from "./CartCard.module.scss";
 type CartCardProps = {
     uuid: string;
     quantity: number;
-    setQuantity: (quantity: number) => void;
     foodList: FoodList;
+    setQuantity: (quantity: number) => void;
 };
 
 export type { CartCardProps };
