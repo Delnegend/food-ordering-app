@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { vibrateDuration } from "../../assets/GlobalVariables";
 import styles from "./QuantitySelector.module.scss";
 
@@ -19,6 +20,14 @@ export default function QuantitySelector({
 }: QuantitySelectorProps) {
     const _maxQuantity = maxQuantity ?? 99;
     const _minQuantity = minQuantity ?? 0;
+
+    useEffect(() => {
+        if (quantity < _minQuantity) {
+            setQuantity(_minQuantity);
+        } else if (quantity > _maxQuantity) {
+            setQuantity(_maxQuantity);
+        }
+    }, [quantity, _minQuantity, _maxQuantity, setQuantity]);
 
     return (
         <div className={styles["container"]}>
