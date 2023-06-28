@@ -16,5 +16,6 @@ const readablePrice = (price: number) => {
 };
 
 const vibrateDuration = 8;
+const maxQuantityPerItem = 99;
 
-export { foodDetailPath, readablePrice, vibrateDuration };
+export { foodDetailPath, readablePrice, vibrateDuration, maxQuantityPerItem };

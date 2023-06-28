@@ -48,7 +48,7 @@ export default function CartCard(props: CartCardProps) {
                         {readablePrice(totalPrice)}
                     </span>
                     <QuantitySelector
-                        maxQuantity={99}
+                        maxQuantity={maxQuantityPerItem}
                         minQuantity={1}
                         quantity={props.quantity}
                         setQuantity={props.setQuantity}
