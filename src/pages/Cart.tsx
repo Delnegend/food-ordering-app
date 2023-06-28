@@ -32,8 +32,8 @@ export default function Cart(props: CartProps) {
         navigator.vibrate(vibrateDuration);
         alert(
             Object.entries(props.cartItems).map(([uuid, quantity]) => {
-                return `\n${foodList[uuid].name} x ${quantity} = ${
-                    foodList[uuid].price * quantity
+                return `\n${props.foodList[uuid].name} x ${quantity} = ${
+                    props.foodList[uuid].price * quantity
                 }`;
             })
         );
@@ -56,7 +56,7 @@ export default function Cart(props: CartProps) {
                             <CartCard
                                 key={uuid}
                                 uuid={uuid}
-                                foodList={foodList}
+                                foodList={props.foodList}
                                 quantity={quantity}
                                 setQuantity={(quantity: number) => {
                                     setQuantity(uuid, quantity);
@@ -70,7 +70,7 @@ export default function Cart(props: CartProps) {
                         Tổng cộng:
                     </span>
                     <span className={styles["cart-total-price"]}>
-                        {readablePrice(totalSum(foodList, props.cartItems))}
+                        {readablePrice(totalSum(props.foodList, props.cartItems))}
                     </span>
                 </div>
             </div>
