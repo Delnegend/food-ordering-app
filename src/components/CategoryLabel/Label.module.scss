@@ -1,3 +1,5 @@
+@import "../../assets/GlobalVariables.scss";
+
 .label {
     border-radius: 8px;
     height: auto;
@@ -24,5 +26,6 @@
     .text {
         font-size: 1rem;
         white-space: nowrap;
+        font-family: $main-font;
     }
 }
