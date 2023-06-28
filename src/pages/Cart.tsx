@@ -58,9 +58,9 @@ export default function Cart(props: CartProps) {
                                 uuid={uuid}
                                 foodList={props.foodList}
                                 quantity={quantity}
-                                setQuantity={(quantity: number) => {
-                                    setQuantity(uuid, quantity);
-                                }}
+                                setQuantity={(quantity) =>
+                                    props.setCartItems(uuid, quantity)
+                                }
                             />
                         );
                     })}
