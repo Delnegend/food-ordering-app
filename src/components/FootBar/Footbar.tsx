@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./FootBar.module.scss";
 
@@ -13,11 +13,22 @@ export type { FootbarProps };
 export default function FootBar(props: { pages: FootbarProps }) {
     const navigate = useNavigate();
     const buttonData: FootbarProps = props.pages;
-    const [currentPageIdx, setActiveIdx]: [number, (index: number) => void] =
-        useState<number>(0);
+    const [currentPageIdx, setCurrentPageIdx]: [
+        number,
+        (index: number) => void
+    ] = useState<number>(0);
+
+    // Set current page index to match the current path
+    useEffect(() => {
+        const currentPath = window.location.pathname;
+        const currentPageIdx = buttonData.findIndex(
+            (button) => button.path === currentPath
+        );
+        setCurrentPageIdx(currentPageIdx);
+    }, [buttonData]);
 
     const handleIconClick = (pageIdx: number) => {
-        setActiveIdx(pageIdx);
+        setCurrentPageIdx(pageIdx);
         navigate(buttonData[pageIdx].path);
     };
 
