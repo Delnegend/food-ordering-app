@@ -1,5 +1,7 @@
 import { useEffect } from "react";
+
 import { vibrateDuration } from "../../assets/GlobalVariables";
+
 import styles from "./QuantitySelector.module.scss";
 
 type QuantitySelectorProps = {

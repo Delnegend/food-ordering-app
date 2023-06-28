@@ -1,7 +1,8 @@
-import styles from "./FoodCard.module.scss";
 import { useNavigate } from "react-router-dom";
-import { foodDetailPath } from "../../assets/GlobalVariables";
-import { vibrateDuration } from "../../assets/GlobalVariables";
+
+import { foodDetailPath, vibrateDuration } from "../../assets/GlobalVariables";
+
+import styles from "./FoodCard.module.scss";
 
 type FoodItem = {
     name: string;

@@ -1,8 +1,12 @@
-import styles from "./CartCard.module.scss";
+import {
+    maxQuantityPerItem,
+    vibrateDuration,
+    readablePrice,
+} from "../../assets/GlobalVariables";
 import { FoodList } from "../FoodCard/FoodCard";
 import QuantitySelector from "../QuantitySelector/QuantitySelector";
-import { readablePrice } from "../../assets/GlobalVariables";
-import { vibrateDuration } from "../../assets/GlobalVariables";
+
+import styles from "./CartCard.module.scss";
 
 type CartCardProps = {
     uuid: string;
