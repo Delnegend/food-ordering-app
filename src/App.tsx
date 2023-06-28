@@ -12,7 +12,7 @@ import MyOrders from "./pages/MyOrders";
 import SignIn from "./pages/SignIn";
 
 export default function App() {
-    const HomePageData: HomePageProps = {
+    const homePageData: HomePageProps = {
         foodList: food_mock_data,
         foodTypes: [
             { name: "Bánh mì", faIcon: "fa-baguette", type: "bread" },
@@ -32,7 +32,7 @@ export default function App() {
 
     const [cartItems, setCartItems] = useState<CartList>({});
 
-    const CartPageData: CartProps = {
+    const cartPageData: CartProps = {
         foodList: food_mock_data,
         cartItems: cartItems,
         setCartItems: setCartItems,
@@ -45,17 +45,17 @@ export default function App() {
         });
     }, []);
 
-    const foodDetailsProps: FoodDetailsProps = {
         cart: {},
+    const foodDetailsPageData: FoodDetailsProps = {
         foodList: food_mock_data,
     };
 
     const routesData: FootbarProps = [
-        { icon: "fa-house", path: "/", page: <Home {...HomePageData} /> },
+        { icon: "fa-house", path: "/", page: <Home {...homePageData} /> },
         {
             icon: "fa-cart-shopping",
             path: "/cart",
-            page: <Cart {...CartPageData} />,
+            page: <Cart {...cartPageData} />,
         },
         { icon: "fa-list", path: "/myorders", page: <MyOrders /> },
         { icon: "fa-user", path: "/signin", page: <SignIn /> },
@@ -68,7 +68,7 @@ export default function App() {
         <Route
             key={routesData.length}
             path={`${foodDetailPath}:foodId`}
-            element={<FoodDetails {...foodDetailsProps} />}
+            element={<FoodDetails {...foodDetailsPageData} />}
         />
     );
 
