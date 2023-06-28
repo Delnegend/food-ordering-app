@@ -1,33 +1,50 @@
 import styles from "./CartCard.module.scss";
 import { FoodList } from "../FoodCard/FoodCard";
+import QuantitySelector from "../QuantitySelector/QuantitySelector";
+import { readablePrice } from "../../assets/GlobalVariables";
 
 type CartCardProps = {
     uuid: string;
     quantity: number;
+    setQuantity: (quantity: number) => void;
     foodList: FoodList;
 };
 
 export type { CartCardProps };
 
 export default function CartCard(props: CartCardProps) {
+    const totalPrice = props.foodList[props.uuid].price * props.quantity;
+
     return (
         <div className={styles.container}>
             <img
-                className={styles.image}
+                className={styles["cartcard-image"]}
                 src={props.foodList[props.uuid].image}
                 alt={props.foodList[props.uuid].name}
             />
-            <div className={styles.body}>
-                <p className={styles.foodname}>
-                    {props.foodList[props.uuid].name}
-                </p>
-                <p className={styles.price}>
-                    {props.foodList[props.uuid].price}
-                </p>
-                <div className={styles.quantity}>
-                    <i className="fa-solid fa-circle-minus"></i>
-                    <p className={styles.value}>{props.quantity}</p>
-                    <i className="fa-solid fa-circle-plus"></i>
+            <div className={styles["cartcard-info"]}>
+                <div className={styles["cartcard-title-and-close-btn"]}>
+                    <span className={styles["cartcard-title"]}>
+                        {props.foodList[props.uuid].name}
+                    </span>
+                    <button
+                        className={styles["cartcard-close-btn"]}
+                        onClick={() => props.setQuantity(0)}
+                    >
+                        <i className="fa-solid fa-times"></i>
+                    </button>
+                </div>
+                <div className={styles["cartcard-topping"]}>Lorem ipsum.</div>
+                <div className={styles["cartcard-price-quantity"]}>
+                    <span className={styles["cartcard-price"]}>
+                        {readablePrice(totalPrice)}
+                    </span>
+                    <QuantitySelector
+                        maxQuantity={99}
+                        minQuantity={1}
+                        quantity={props.quantity}
+                        setQuantity={props.setQuantity}
+                    />
                 </div>
             </div>
         </div>
