@@ -58,16 +58,10 @@ export default function App() {
         emptyCartText: "Chưa có món nào trong giỏ hàng",
     };
 
-    useEffect(() => {
-        setCartItems({
-            "6fdd237b-6b0e-429e-9722-411ae1099753": 1,
-            "fef8b604-577e-4adc-98ce-c5fe98debbb6": 2,
-        });
-    }, []);
-
-        cart: {},
     const foodDetailsPageData: FoodDetailsProps = {
+        cartItems: cartItems,
         foodList: food_mock_data,
+        addCartItems: addCartItems,
     };
 
     const routesData: FootbarProps = [
@@ -80,6 +74,21 @@ export default function App() {
         { icon: "fa-list", path: "/myorders", page: <MyOrders /> },
         { icon: "fa-user", path: "/signin", page: <SignIn /> },
     ];
+
+    const [localStorageCartWritable, setLocalStorageCartWritable] =
+        useState(false);
+    useEffect(() => {
+        const cartItemsFromLocalStorage = localStorage.getItem("cartItems");
+        if (cartItemsFromLocalStorage) {
+            _setCartItems(JSON.parse(cartItemsFromLocalStorage));
+            setLocalStorageCartWritable(true);
+        }
+    }, []);
+
+    useEffect(() => {
+        if (!localStorageCartWritable) return;
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    }, [cartItems, localStorageCartWritable]);
 
     const routes = routesData.map((route) => (
         <Route key={route.path} path={route.path} element={route.page} />
