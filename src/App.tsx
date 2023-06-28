@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import { HomePageProps } from "./pages/Home";
 import SignIn from "./pages/SignIn";
@@ -11,7 +11,7 @@ import FoodDetails from "./pages/FoodDetails";
 import { FoodDetailsProps } from "./pages/FoodDetails";
 import { foodDetailPath } from "./assets/GlobalVariables";
 import { useState, useEffect } from "react";
-
+import SlideRoutes from "react-slide-routes";
 import food_mock_data from "./_SAMPLE_DATA/food_mock.json";
 
 export default function App() {
@@ -48,7 +48,12 @@ export default function App() {
         });
     }, []);
 
-    const routes: FootbarProps = [
+    const foodDetailsProps: FoodDetailsProps = {
+        cart: {},
+        foodList: food_mock_data,
+    };
+
+    const routesData: FootbarProps = [
         { icon: "fa-house", path: "/", page: <Home {...HomePageData} /> },
         {
             icon: "fa-cart-shopping",
@@ -59,23 +64,21 @@ export default function App() {
         { icon: "fa-user", path: "/signin", page: <SignIn /> },
     ];
 
-    const foodDetailsProps: FoodDetailsProps = {
-        cart: {},
-        foodList: food_mock_data,
-    };
+    const routes = routesData.map((route) => (
+        <Route key={route.path} path={route.path} element={route.page} />
+    ));
+    routes.push(
+        <Route
+            key={routesData.length}
+            path={`${foodDetailPath}:foodId`}
+            element={<FoodDetails {...foodDetailsProps} />}
+        />
+    );
 
     return (
         <BrowserRouter>
-            <FootBar pages={routes} />
-            <Routes>
-                {routes.map((route, index) => (
-                    <Route key={index} path={route.path} element={route.page} />
-                ))}
-                <Route
-                    path={`${foodDetailPath}:foodId`}
-                    element={<FoodDetails {...foodDetailsProps} />}
-                />
-            </Routes>
+            <FootBar pages={routesData} />
+            <SlideRoutes>{routes}</SlideRoutes>
         </BrowserRouter>
     );
 }
