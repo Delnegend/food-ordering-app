@@ -1,0 +1,68 @@
+@import "../../assets/GlobalVariables.scss";
+
+.container {
+    $image-size: 7rem;
+    $font-small: 1.2rem;
+    $font-large: 1.5rem;
+
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.8rem 0;
+    gap: 1.2rem;
+
+    .cartcard-image {
+        width: $image-size;
+        height: $image-size;
+        object-fit: cover;
+        border-radius: 1.5rem;
+        box-shadow: $drop-shadow;
+    }
+    .cartcard-info {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        font-family: $main-font;
+
+        .cartcard-title-and-close-btn {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+
+            .cartcard-title {
+                font-size: $font-large;
+                font-weight: 900;
+                color: $color-dark;
+            }
+            .cartcard-close-btn {
+                border: none;
+                border-radius: 9999px;
+                background-color: transparent;
+                i {
+                    color: $color-dark;
+                    font-size: $font-small;
+                }
+            }
+        }
+        .cartcard-topping {
+            font-size: $font-small;
+            color: $color-gray;
+            margin-bottom: 1.2rem;
+        }
+        .cartcard-price-quantity {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            .cartcard-price {
+                font-size: $font-small;
+                font-weight: 900;
+                color: $color-main;
+            }
+        }
+    }
+}

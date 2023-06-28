@@ -1,4 +1,4 @@
-import styles from "./CartCard.module.css";
+import styles from "./CartCard.module.scss";
 import { FoodList } from "../FoodCard/FoodCard";
 
 type CartCardProps = {
