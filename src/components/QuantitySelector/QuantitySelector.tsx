@@ -1,3 +1,4 @@
+import { vibrateDuration } from "../../assets/GlobalVariables";
 import styles from "./QuantitySelector.module.scss";
 
 type QuantitySelectorProps = {
@@ -23,14 +24,20 @@ export default function QuantitySelector({
             <button
                 className={styles["button__remove"]}
                 disabled={quantity === _minQuantity}
-                onClick={() => setQuantity(quantity - 1)}
+                onClick={() => {
+                    setQuantity(quantity - 1);
+                    navigator.vibrate(vibrateDuration);
+                }}
             >
                 <i className="fa-solid fa-minus"></i>
             </button>
             <div className={styles["quantity"]}>{quantity}</div>
             <button
                 className={styles["button__add"]}
-                onClick={() => setQuantity(quantity + 1)}
+                onClick={() => {
+                    setQuantity(quantity + 1);
+                    navigator.vibrate(vibrateDuration);
+                }}
                 disabled={quantity === _maxQuantity}
             >
                 <i className="fa-solid fa-plus"></i>

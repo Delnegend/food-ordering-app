@@ -15,4 +15,6 @@ const readablePrice = (price: number) => {
     return result + "đ";
 };
 
-export { foodDetailPath, readablePrice };
+const vibrateDuration = 8;
+
+export { foodDetailPath, readablePrice, vibrateDuration };

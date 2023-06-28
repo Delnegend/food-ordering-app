@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { vibrateDuration } from "../../assets/GlobalVariables";
 import styles from "./FootBar.module.scss";
 
 type FootbarProps = {
@@ -30,6 +31,7 @@ export default function FootBar(props: { pages: FootbarProps }) {
     const handleIconClick = (pageIdx: number) => {
         setCurrentPageIdx(pageIdx);
         navigate(buttonData[pageIdx].path);
+        navigator.vibrate(vibrateDuration);
     };
 
     return (

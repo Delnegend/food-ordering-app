@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { vibrateDuration } from "../../assets/GlobalVariables";
 import styles from "./HomeTopBar.module.scss";
 
 type HomeTopBarProps = {
@@ -40,6 +41,7 @@ export default function HomeTopBar({
             hamMenuRef.current?.contains(target) &&
             !hamMenuInnerRef.current?.contains(target);
         if (clickOutsideHamMenuInner) {
+            navigator.vibrate(vibrateDuration);
             setActiveHamburger(false);
         }
     };
@@ -69,7 +71,10 @@ export default function HomeTopBar({
             <div className={styles["hamburger__container"]}>
                 <button
                     className={styles["hamburger__button"]}
-                    onClick={() => setActiveHamburger(!isHamburgerMenuActive)}
+                    onClick={() => {
+                        setActiveHamburger(!isHamburgerMenuActive);
+                        navigator.vibrate(vibrateDuration);
+                    }}
                 >
                     <i className="fa-solid fa-bars fa-2xl"></i>
                 </button>
@@ -107,7 +112,9 @@ export default function HomeTopBar({
                                     ([key, value]) => {
                                         return (
                                             <li key={key}>
-                                                <button>
+                                                <button
+                                                    onClick={() => navigator.vibrate(vibrateDuration)}
+                                                >
                                                     <i
                                                         className={`fa-duotone ${value} fa-2xl`}
                                                     ></i>
@@ -120,7 +127,7 @@ export default function HomeTopBar({
                             </ul>
                         </div>
 
-                        <button className={`${styles["log-out-button"]}`}>
+                        <button className={`${styles["log-out-button"]}`} onClick={() => navigator.vibrate(vibrateDuration)}>
                             <i
                                 className={`${styles["log-out-icon"]} fa-regular fa-power-off fa-xl`}
                             ></i>
