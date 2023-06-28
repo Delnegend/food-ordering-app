@@ -58,8 +58,9 @@ export default function Cart(props: CartProps) {
                 {Object.entries(props.cartItems).map(([uuid, quantity]) => {
                     return (
                         <CartCard
-                            foodList={foodList}
+                            key={uuid}
                             uuid={uuid}
+                            foodList={foodList}
                             quantity={quantity}
                             setQuantity={(quantity: number) => {
                                 setQuantity(uuid, quantity);
