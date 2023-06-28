@@ -24,6 +24,15 @@ export default function App() {
         });
     };
 
+    const addCartItems = (uuid: string, quantity: number) => {
+        _setCartItems((currentCart) => {
+            return {
+                ...currentCart,
+                [uuid]: (currentCart[uuid] ?? 0) + quantity,
+            };
+        });
+    };
+
     const homePageData: HomePageProps = {
         foodList: food_mock_data,
         foodTypes: [
