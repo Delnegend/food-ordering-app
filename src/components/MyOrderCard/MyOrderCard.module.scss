@@ -1,8 +1,8 @@
 @import "../../assets/GlobalVariables.scss";
 
 .container {
-    width: $page-width;
-    max-width: $page-max-width;
+    width: var(--page-width);
+    max-width: var(--page-max-width);
     margin: 0 0 $footbar-height 0;
 
     display: flex;

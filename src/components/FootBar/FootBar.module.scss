@@ -11,8 +11,8 @@
     z-index: 1;
     ul {
         margin: auto;
-        width: $page-width;
-        max-width: $page-max-width;
+        width: var(--page-width);
+        max-width: var(--page-max-width);
         display: flex;
         align-items: center;
         justify-content: space-evenly;

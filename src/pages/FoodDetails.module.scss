@@ -1,8 +1,8 @@
 @import "../assets/GlobalVariables.scss";
 
 .container {
-    width: $page-width;
-    max-width: $page-max-width;
+    width: var(--page-width);
+    max-width: var(--page-max-width);
     display: flex;
     flex-direction: column;
     margin: 2rem auto 0 auto;

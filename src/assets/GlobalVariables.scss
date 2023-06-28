@@ -1,5 +1,14 @@
-$page-width: 85%;
-$page-max-width: 450px;
+
+:root {
+    --page-width: 85%;
+    --page-max-width: 450px;
+}
+@media screen and (max-width: 400px) {
+    :root {
+        --page-width: 90%;
+    }
+}
+
 $footbar-height: 60px;
 
 $drop_shadow: 0 15px 15px rgba(0, 0, 0, 0.1);

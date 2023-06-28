@@ -4,8 +4,8 @@
     $font-large: 1.5rem;
     $font-small: 1.2rem;
 
-    width: $page-width;
-    max-width: $page-max-width;
+    width: var(--page-width);
+    max-width: var(--page-max-width);
     margin: 0 auto $footbar-height auto;
 
     display: flex;
