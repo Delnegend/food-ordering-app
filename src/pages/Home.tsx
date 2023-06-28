@@ -7,8 +7,8 @@ import { FoodList } from "../components/FoodCard/FoodCard";
 import styles from "./Home.module.scss";
 
 type HomePageProps = {
-    food_list: FoodList;
-    food_types: LabelProps[];
+    foodList: FoodList;
+    foodTypes: LabelProps[];
     welcome_message: string;
     appName: string;
     avatarUrl: string;
@@ -31,7 +31,7 @@ export default function Home(props: HomePageProps) {
                 {props.welcome_message}
             </div>
             <div className={styles.label_container}>
-                {props.food_types.map((value, index) => {
+                {props.foodTypes.map((value, index) => {
                     return (
                         <Label
                             key={index}
@@ -43,7 +43,7 @@ export default function Home(props: HomePageProps) {
                 })}
             </div>
             <div className={styles.food_item_container}>
-                {Object.entries(props.food_list).map(([key, value]) => {
+                {Object.entries(props.foodList).map(([key, value]) => {
                     return (
                         <FoodCard
                             key={key}
