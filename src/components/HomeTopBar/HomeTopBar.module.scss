@@ -33,8 +33,8 @@
         nav {
             $ham-padding-vertical: 2.4rem;
             $ham-padding-horizontal: 2.2rem;
-            $inner-width: 80%;
-            $inner-max-width: 350px;
+            $inner-width: 100%;
+            $inner-max-width: 230px;
 
             width: 100%;
             height: 100%;
@@ -58,6 +58,8 @@
                 backdrop-filter: blur(10px);
                 background-color: rgba(255, 255, 255, 0.9);
                 padding: $ham-padding-vertical $ham-padding-horizontal;
+                // enable vertical scroll
+                overflow-y: auto;
             }
         }
 
