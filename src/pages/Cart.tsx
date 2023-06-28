@@ -88,7 +88,7 @@ export default function Cart(props: CartProps) {
                 className={`${styles["cart-container__empty"]} ${emptyCartClass}`}
             >
                 <span className={styles["cart-empty-text"]}>
-                    Chưa có món nào trong giỏ hàng
+                    {props.emptyCartText}
                 </span>
             </div>
         </div>

@@ -55,6 +55,7 @@ export default function App() {
         foodList: food_mock_data,
         cartItems: cartItems,
         setCartItems: setCartItems,
+        emptyCartText: "Chưa có món nào trong giỏ hàng",
     };
 
     useEffect(() => {
