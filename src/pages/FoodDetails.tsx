@@ -1,6 +1,7 @@
 import styles from "./FoodDetails.module.scss";
 import { FoodList } from "../components/FoodCard/FoodCard";
 import { useState } from "react";
+import { vibrateDuration } from "../assets/GlobalVariables";
 import QuantitySelector from "../components/QuantitySelector/QuantitySelector";
 
 type FoodDetailsProps = {
@@ -27,7 +28,10 @@ export default function FoodDetails(props: FoodDetailsProps) {
                     src={food.image}
                     alt={food.name}
                 />
-                <button onClick={() => window.history.back()}>
+                <button onClick={() => {
+                    window.history.back();
+                    navigator.vibrate(vibrateDuration);
+                }}>
                     <i className="fa-thin fa-arrow-left"></i>
                 </button>
             </div>
