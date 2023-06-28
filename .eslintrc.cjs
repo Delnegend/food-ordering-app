@@ -4,6 +4,7 @@ module.exports = {
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:react-hooks/recommended",
+        "plugin:import/recommended",
         "prettier",
     ],
     parser: "@typescript-eslint/parser",
@@ -11,5 +12,19 @@ module.exports = {
     plugins: ["react-refresh"],
     rules: {
         "react-refresh/only-export-components": "warn",
+        "import/order": [
+            "error",
+            {
+                alphabetize: { order: "asc", caseInsensitive: true },
+                "newlines-between": "always",
+            },
+        ],
+    },
+    settings: {
+        "import/resolver": {
+            node: {
+                extensions: [".js", ".jsx", ".ts", ".tsx"],
+            },
+        },
     },
 };
