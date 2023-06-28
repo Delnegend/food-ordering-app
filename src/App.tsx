@@ -25,6 +25,7 @@ export default function App() {
     };
 
     const addCartItems = (uuid: string, quantity: number) => {
+        if (quantity <= 0) return;
         _setCartItems((currentCart) => {
             return {
                 ...currentCart,
