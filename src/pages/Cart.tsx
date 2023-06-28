@@ -13,28 +13,13 @@ type CartList = {
 type CartProps = {
     foodList: FoodList;
     cartItems: CartList;
-    setCartItems: React.Dispatch<React.SetStateAction<CartList>>;
+    emptyCartText: string;
+    setCartItems: (uuid: string, quantity: number) => void;
 };
 
 export type { CartList, CartProps };
 
 export default function Cart(props: CartProps) {
-    const foodList: FoodList = food_mock_data;
-
-    const setQuantity = (uuid: string, quantity: number) => {
-        props.setCartItems((currentCart) => {
-            if (quantity === 0) {
-                const newCart: CartList = { ...currentCart };
-                delete newCart[uuid];
-                return newCart;
-            }
-            return {
-                ...currentCart,
-                [uuid]: quantity,
-            };
-        });
-    };
-
     const totalSum = (food: FoodList, cart: CartList) => {
         let total = 0;
         Object.entries(cart).forEach(([uuid, quantity]) => {

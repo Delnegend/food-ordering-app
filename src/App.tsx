@@ -12,6 +12,18 @@ import MyOrders from "./pages/MyOrders";
 import SignIn from "./pages/SignIn";
 
 export default function App() {
+    const [cartItems, _setCartItems] = useState<CartList>({});
+
+    const setCartItems = (uuid: string, quantity: number) => {
+        if (quantity < 0) return;
+        _setCartItems((currentCart) => {
+            const newCart = { ...currentCart };
+            if (quantity === 0) delete newCart[uuid];
+            else newCart[uuid] = quantity;
+            return newCart;
+        });
+    };
+
     const homePageData: HomePageProps = {
         foodList: food_mock_data,
         foodTypes: [
@@ -29,8 +41,6 @@ export default function App() {
         userName: "",
         userEmail: "",
     };
-
-    const [cartItems, setCartItems] = useState<CartList>({});
 
     const cartPageData: CartProps = {
         foodList: food_mock_data,
