@@ -2,6 +2,7 @@ import CartCard from "../components/CartCard/CartCard";
 import food_mock_data from "../_SAMPLE_DATA/food_mock.json";
 import styles from "./Cart.module.scss";
 import { FoodList } from "../components/FoodCard/FoodCard";
+import { vibrateDuration } from "../assets/GlobalVariables";
 
 type CartList = {
     [uuid: string]: number;
@@ -41,6 +42,7 @@ export default function Cart(props: CartProps) {
     };
 
     const checkOut = () => {
+        navigator.vibrate(vibrateDuration);
         alert(
             Object.entries(props.cartItems).map(([uuid, quantity]) => {
                 return `\n${foodList[uuid].name} x ${quantity} = ${
