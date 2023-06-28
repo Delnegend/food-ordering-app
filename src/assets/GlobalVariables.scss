@@ -1,4 +1,4 @@
-$page-width: 90%;
+$page-width: 85%;
 $page-max-width: 450px;
 $footbar-height: 60px;
 
@@ -17,3 +17,7 @@ $welcome_message_font: "Roboto Slab";
 $welcome_message_font_size: 3rem;
 
 $hamburger_menu_font: "Roboto Slab";
+
+body {
+    margin: 0;
+}
