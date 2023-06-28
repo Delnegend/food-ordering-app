@@ -1,6 +1,9 @@
 @import "../../assets/GlobalVariables.scss";
 
 .container {
+    $font-large: 1.5rem;
+    $font-small: 1.2rem;
+
     margin: 10px;
     width: 100%;
     display: flex;
@@ -20,15 +23,18 @@
     }
 
     .body {
+        font-family: $main-font;
         display: grid;
         grid-template-rows: 1fr 1fr 1fr;
         gap: 0.4rem;
         max-width: 90%;
-        margin: 1.3rem 1.5rem;
+        margin: 1rem 1.5rem 1.3rem 1.5rem;
+
         .foodname {
-            font-size: 1.5rem;
+            font-size: $font-large;
             font-weight: bold;
             justify-items: center;
+            color: $color-dark;
         }
 
         .info {
@@ -36,9 +42,9 @@
             align-items: center;
             gap: 0.4rem;
             justify-items: center;
+            color: $color-dark;
             i {
-                color: #f1c40f;
-                font-size: 20px;
+                color: $color-main;
             }
         }
 
@@ -49,6 +55,7 @@
                 background-color: #f1f1f1;
                 padding: 5px 8px;
                 border-radius: 5px;
+                color: $color-gray;
             }
         }
     }
