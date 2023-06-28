@@ -1,7 +1,75 @@
 @import "../assets/GlobalVariables.scss";
 
 .container {
+    $font-large: 1.5rem;
+    $font-small: 1.2rem;
+
     width: $page-width;
     max-width: $page-max-width;
     margin: 0 auto $footbar-height auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    min-height: calc(100vh - $footbar-height);
+    .cart-container__top {
+        width: 100%;
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            .cart-total-text {
+                font-family: $main-font;
+                font-size: $font-large;
+                // font-weight: 900;
+                color: $color-dark;
+            }
+            .cart-total-price {
+                font-family: $main-font;
+                font-size: $font-large;
+                font-weight: 900;
+                color: $color-dark;
+            }
+        }
+    }
+    .cart-container__bottom {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .cart-checkout-btn {
+            border: none;
+            font-family: $main-font;
+            border-radius: 9999px;
+            background-color: $color-main;
+            color: white;
+            padding: 1rem 4rem;
+            text-transform: uppercase;
+            margin: 2rem 0;
+            font-weight: bold;
+            font-size: $font-small;
+        }
+    }
+    .cart-empty {
+        &.cart-container__top,
+        &.cart-container__bottom {
+            display: none;
+        }
+    }
+    .cart-container__empty:not(.cart-empty) {
+        display: none;
+    }
+    .cart-container__empty {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: calc(100vh - $footbar-height);
+        font-size: $font-large * 1.5;
+        font-family: $main-font;
+        font-weight: bold;
+    }
 }
