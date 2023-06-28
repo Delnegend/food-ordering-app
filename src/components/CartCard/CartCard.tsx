@@ -32,7 +32,7 @@ export default function CartCard(props: CartCardProps) {
                         className={styles["cartcard-close-btn"]}
                         onClick={() => {
                             props.setQuantity(0);
-                            navigator.vibrate(vibrateDuration);``
+                            navigator.vibrate(vibrateDuration);
                         }}
                     >
                         <i className="fa-solid fa-times"></i>
