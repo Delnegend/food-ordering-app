@@ -1,10 +1,10 @@
-import CartCard from "../components/CartCard/CartCard";
-import food_mock_data from "../_SAMPLE_DATA/food_mock.json";
-import styles from "./Cart.module.scss";
-import { FoodList } from "../components/FoodCard/FoodCard";
-import { vibrateDuration } from "../assets/GlobalVariables";
-import { readablePrice } from "../assets/GlobalVariables";
 import { useEffect, useState } from "react";
+
+import { readablePrice, vibrateDuration } from "../assets/GlobalVariables";
+import CartCard from "../components/CartCard/CartCard";
+import { FoodList } from "../components/FoodCard/FoodCard";
+
+import styles from "./Cart.module.scss";
 
 type CartList = {
     [uuid: string]: number;

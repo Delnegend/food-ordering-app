@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import { vibrateDuration } from "../../assets/GlobalVariables";
+
 import styles from "./FootBar.module.scss";
 
 type FootbarProps = {

@@ -1,18 +1,15 @@
+import { useEffect, useState } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import { HomePageProps } from "./pages/Home";
-import SignIn from "./pages/SignIn";
-import Cart from "./pages/Cart";
-import { CartProps, CartList } from "./pages/Cart";
-import MyOrders from "./pages/MyOrders";
-import FootBar from "./components/FootBar/Footbar";
-import { FootbarProps } from "./components/FootBar/Footbar";
-import FoodDetails from "./pages/FoodDetails";
-import { FoodDetailsProps } from "./pages/FoodDetails";
-import { foodDetailPath } from "./assets/GlobalVariables";
-import { useState, useEffect } from "react";
 import SlideRoutes from "react-slide-routes";
+
 import food_mock_data from "./_SAMPLE_DATA/food_mock.json";
+import { foodDetailPath } from "./assets/GlobalVariables";
+import FootBar, { FootbarProps } from "./components/FootBar/Footbar";
+import Cart, { CartList, CartProps } from "./pages/Cart";
+import FoodDetails, { FoodDetailsProps } from "./pages/FoodDetails";
+import Home, { HomePageProps } from "./pages/Home";
+import MyOrders from "./pages/MyOrders";
+import SignIn from "./pages/SignIn";
 
 export default function App() {
     const HomePageData: HomePageProps = {

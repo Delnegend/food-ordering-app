@@ -1,8 +1,10 @@
-import styles from "./FoodDetails.module.scss";
-import { FoodList } from "../components/FoodCard/FoodCard";
 import { useState } from "react";
+
 import { vibrateDuration } from "../assets/GlobalVariables";
+import { FoodList } from "../components/FoodCard/FoodCard";
 import QuantitySelector from "../components/QuantitySelector/QuantitySelector";
+
+import styles from "./FoodDetails.module.scss";
 
 type FoodDetailsProps = {
     cart: {

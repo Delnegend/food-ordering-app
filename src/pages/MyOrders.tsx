@@ -1,6 +1,7 @@
-import MyOrderCard from "../components/MyOrderCard/MyOrderCard";
-import { FoodList } from "../components/FoodCard/FoodCard";
 import food_mock_data from "../_SAMPLE_DATA/food_mock.json";
+import { FoodList } from "../components/FoodCard/FoodCard";
+import MyOrderCard from "../components/MyOrderCard/MyOrderCard";
+
 import styles from "./MyOrders.module.scss";
 
 export default function MyOrders() {

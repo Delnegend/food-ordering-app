@@ -1,5 +1,7 @@
-import { useState, useRef, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
+
 import { vibrateDuration } from "../../assets/GlobalVariables";
+
 import styles from "./HomeTopBar.module.scss";
 
 type HomeTopBarProps = {

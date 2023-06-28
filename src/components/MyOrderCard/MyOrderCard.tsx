@@ -1,5 +1,6 @@
-import styles from "./MyOrderCard.module.scss";
 import { FoodItem } from "../FoodCard/FoodCard";
+
+import styles from "./MyOrderCard.module.scss";
 
 export default function MyOrderCard(props: FoodItem) {
     return (

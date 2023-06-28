@@ -1,8 +1,6 @@
-import FoodCard from "../components/FoodCard/FoodCard";
-import Label from "../components/CategoryLabel/Label";
-import { LabelProps } from "../components/CategoryLabel/Label";
+import Label, { LabelProps } from "../components/CategoryLabel/Label";
+import FoodCard, { FoodList } from "../components/FoodCard/FoodCard";
 import HomeTopBar from "../components/HomeTopBar/HomeTopBar";
-import { FoodList } from "../components/FoodCard/FoodCard";
 
 import styles from "./Home.module.scss";
 
