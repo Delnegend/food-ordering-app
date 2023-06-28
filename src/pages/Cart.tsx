@@ -70,7 +70,9 @@ export default function Cart(props: CartProps) {
                         Tổng cộng:
                     </span>
                     <span className={styles["cart-total-price"]}>
-                        {readablePrice(totalSum(props.foodList, props.cartItems))}
+                        {readablePrice(
+                            totalSum(props.foodList, props.cartItems)
+                        )}
                     </span>
                 </div>
             </div>
