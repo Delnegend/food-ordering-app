@@ -21,13 +21,13 @@
             align-items: center;
             width: 100%;
             .cart-total-text {
-                font-family: $main-font;
+                font-family: $font-primary;
                 font-size: $font-large;
                 // font-weight: 900;
                 color: $color-dark;
             }
             .cart-total-price {
-                font-family: $main-font;
+                font-family: $font-primary;
                 font-size: $font-large;
                 font-weight: 900;
                 color: $color-dark;
@@ -41,7 +41,7 @@
         align-items: center;
         .cart-checkout-btn {
             border: none;
-            font-family: $main-font;
+            font-family: $font-primary;
             border-radius: 9999px;
             background-color: $color-main;
             color: white;
@@ -69,7 +69,7 @@
         width: 100%;
         height: calc(100vh - $footbar-height);
         font-size: $font-large * 1.5;
-        font-family: $main-font;
+        font-family: $font-primary;
         font-weight: bold;
         color: $color-dark;
     }
