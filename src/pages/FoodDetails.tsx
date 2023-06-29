@@ -12,6 +12,9 @@ type FoodDetailsProps = {
     };
     addCartItems: (uuid: string, quantity: number) => void;
     foodList: FoodList;
+    etaText: string;
+    addToCartText: string;
+    minuteText: string;
 };
 
 export type { FoodDetailsProps };
@@ -51,9 +54,9 @@ export default function FoodDetails(props: FoodDetailsProps) {
                     <span>
                         <i className="fa-solid fa-clock"></i>
                     </span>
-                    <span>Thời gian chuẩn bị dự kiến:</span>
+                    <span>{props.etaText}</span>
                     <span>{food.prepare_time}</span>
-                    <span>phút</span>
+                    <span>{props.minuteText}</span>
                 </div>
                 <div className={styles["details-price-quantity"]}>
                     <div className={styles["details-price"]}>{food.price}</div>
@@ -80,7 +83,7 @@ export default function FoodDetails(props: FoodDetailsProps) {
                         className={`${styles["cart-icon"]} fa-regular fa-shopping-cart fa-xl`}
                     ></i>
                     <span className={styles["cart-label"]}>
-                        Thêm vào giỏ hàng
+                        {props.addToCartText}
                     </span>
                 </button>
             </div>
