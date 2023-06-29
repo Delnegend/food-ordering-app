@@ -37,10 +37,10 @@ export default function App() {
     const homePageData: HomePageProps = {
         foodList: food_mock_data,
         foodTypes: [
-            { name: "Bánh mì", faIcon: "fa-baguette", type: "bread" },
+            { name: "Bánh", faIcon: "fa-baguette", type: "bread" },
             { name: "Xôi", faIcon: "fa-bowl-rice", type: "rice" },
             {
-                name: "Mì trộn",
+                name: "Mì",
                 faIcon: "fa-bowl-chopsticks-noodles",
                 type: "noodle",
             },
