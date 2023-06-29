@@ -48,7 +48,7 @@
 
     .details-title {
         font-size: $font-size-large;
-        font-family: $main-font;
+        font-family: $font-primary;
         font-weight: bold;
         margin: 1rem 0;
         color: $color-dark;
@@ -56,7 +56,7 @@
 
     .details-eta {
         color: $color-dark;
-        font-family: $main-font;
+        font-family: $font-primary;
         display: flex;
         flex-direction: row;
         gap: 0.4rem;
@@ -76,7 +76,7 @@
 
         .details-price {
             font-size: $font-size-large;
-            font-family: $main-font;
+            font-family: $font-primary;
             font-weight: bold;
             color: $color-main;
 
@@ -89,7 +89,7 @@
 
     .details-description {
         color: $color-gray;
-        font-family: $main-font;
+        font-family: $font-primary;
         font-size: $font-size-small;
     }
 
@@ -129,8 +129,8 @@
 
         .cart-label {
             color: white;
-            font-family: $main-font;
             margin-right: 0.3rem;
+            font-family: $font-primary;
         }
     }
 }

@@ -12,19 +12,19 @@ $footbar-height: 60px;
 
 $drop_shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
 
-$main-font: "Roboto Slab";
+$font-primary: "SVN-Sofia Pro";
 
 $color-main: #fe724c;
 $color-alt: #ffc529;
 $color-dark: #1a1d26;
 $color-gray: #9a9fae;
 
-$app_name_font: "Roboto Slab";
+$app_name_font: $font-primary;
 $app_name_font_size: 1.4rem;
-$welcome_message_font: "Roboto Slab";
+$welcome_message_font: $font-primary;
 $welcome_message_font_size: 3rem;
 
-$hamburger_menu_font: "Roboto Slab";
+$hamburger_menu_font: $font-primary;
 
 body {
     margin: 0;
