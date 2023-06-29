@@ -9,6 +9,7 @@
     width: 100%;
     background-color: white;
     z-index: 1;
+
     ul {
         margin: auto;
         width: var(--page-width);
@@ -17,56 +18,57 @@
         align-items: center;
         justify-content: space-evenly;
     }
-}
 
-.fa-solid {
-    color: #cacfd2;
-}
+    .fa-solid {
+        color: #cacfd2;
+        transition-property: color, transform;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-in-out;
+        &.active {
+            color: #ff7f50;
+            transform: scale(1.1);
+        }
+    }
 
-.fa-solid.active {
-    color: #ff7f50;
-}
+    .icon-list {
+        list-style-type: none;
+        padding: 0 1rem;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
 
-.icon-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-}
+        li {
+            margin: 0;
+            user-select: none;
+        }
 
-.icon-list li {
-    margin: 0;
-    user-select: none;
-}
+        button {
+            position: relative;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
 
-.icon-list button {
-    position: relative;
-    padding: 10px 20px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    overflow: hidden;
-    border-radius: 15px;
-}
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: transparent;
+                width: 60%;
+                height: 100%;
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out;
+                z-index: -1;
+                border-radius: inherit;
+            }
 
-.icon-list button::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    z-index: -1;
-    border-radius: inherit;
-}
-
-.icon-list button:hover::after {
-    opacity: 1;
+            &:hover::after {
+                opacity: 1;
+            }
+        }
+    }
 }
