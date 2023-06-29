@@ -1,4 +1,7 @@
+import { vibrateDuration } from "../../assets/GlobalVariables";
+
 import styles from "./Label.module.scss";
+
 type LabelProps = {
     name: string;
     type: string;
@@ -16,6 +19,7 @@ export default function Label(props: LabelProps) {
             : "";
 
     const handleActiveLabel = () => {
+        navigator.vibrate(vibrateDuration);
         if (props.currentActiveLabel === props.type)
             props.setCurrentActiveLabel("");
         else props.setCurrentActiveLabel(props.type);
