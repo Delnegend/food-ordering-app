@@ -1,6 +1,10 @@
 import { useNavigate } from "react-router-dom";
 
-import { foodDetailPath, vibrateDuration } from "../../assets/GlobalVariables";
+import {
+    readablePrice,
+    foodDetailPath,
+    vibrateDuration,
+} from "../../assets/GlobalVariables";
 
 import styles from "./FoodCard.module.scss";
 
@@ -41,7 +45,7 @@ export default function FoodCard(props: FoodCardProps) {
                 <div className={styles.foodname}>{props.name}</div>
                 <div className={styles.info}>
                     <i className="fa-solid fa-moped"></i>
-                    <span>{props.price} ₫</span>
+                    <span>{readablePrice(props.price)} đ</span>
                     <i className="fa-solid fa-clock"></i>
                     <span>{props.prepare_time} phút</span>
                 </div>
