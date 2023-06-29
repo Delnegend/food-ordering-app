@@ -8,8 +8,7 @@
     align-items: center;
     flex-direction: column;
     .label_container {
-        width: 100%;
-        display: grid;
+        display: flex;
         gap: 1rem;
         grid-template-columns: 1fr 1fr 1fr;
         margin-bottom: 1rem;
