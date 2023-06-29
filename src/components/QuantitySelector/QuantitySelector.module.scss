@@ -17,9 +17,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
 
         &:disabled {
             opacity: 0.5;
+            cursor: not-allowed;
         }
     }
 

@@ -50,6 +50,8 @@
             margin: 2rem 0;
             font-weight: bold;
             font-size: $font-small;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
         }
     }
     .cart-empty {
