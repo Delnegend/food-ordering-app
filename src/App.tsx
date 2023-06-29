@@ -34,6 +34,8 @@ export default function App() {
         });
     };
 
+    const [currentActiveLabel, setCurrentActiveLabel] = useState<string>("");
+
     const homePageData: HomePageProps = {
         foodList: food_mock_data,
         foodTypes: [
@@ -50,6 +52,8 @@ export default function App() {
         avatarUrl: "",
         userName: "",
         userEmail: "",
+        currentActiveLabel: currentActiveLabel,
+        setCurrentActiveLabel: setCurrentActiveLabel,
     };
 
     const cartPageData: CartProps = {
