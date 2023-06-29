@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import SlideRoutes from "react-slide-routes";
 
+import "./App.module.scss";
 import food_mock_data from "./_SAMPLE_DATA/food_mock.json";
 import { foodDetailPath } from "./assets/GlobalVariables";
 import { FoodList } from "./components/FoodCard/FoodCard";
