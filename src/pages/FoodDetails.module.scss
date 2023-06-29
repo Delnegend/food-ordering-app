@@ -109,11 +109,15 @@
         padding: 0.8rem;
         bottom: 0;
         box-shadow: $drop_shadow;
+        transition-property: background-color, transform;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-in-out;
         cursor: pointer;
         -webkit-tap-highlight-color: transparent;
 
         &:hover {
             background-color: lightsalmon;
+            transform: scale(1.05);
         }
 
         .cart-icon {
