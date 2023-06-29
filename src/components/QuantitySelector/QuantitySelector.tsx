@@ -33,7 +33,7 @@ export default function QuantitySelector({
     return (
         <div className={styles["container"]}>
             <button
-                className={styles["button__remove"]}
+                className={styles["button-remove"]}
                 disabled={quantity === _minQuantity}
                 onClick={() => {
                     setQuantity(quantity - 1);
@@ -44,7 +44,7 @@ export default function QuantitySelector({
             </button>
             <div className={styles["quantity"]}>{quantity}</div>
             <button
-                className={styles["button__add"]}
+                className={styles["button-add"]}
                 onClick={() => {
                     setQuantity(quantity + 1);
                     navigator.vibrate(vibrateDuration);

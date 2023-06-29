@@ -39,10 +39,10 @@ export default function Home(props: HomePageProps) {
                 userName={props.userName}
                 userEmail={props.userEmail}
             />
-            <div className={styles.welcome_message}>
+            <div className={styles["welcome-message"]}>
                 {props.welcome_message}
             </div>
-            <div className={styles.label_container}>
+            <div className={styles["label-container"]}>
                 {props.foodTypes.map((value, index) => {
                     return (
                         <Label
@@ -59,7 +59,7 @@ export default function Home(props: HomePageProps) {
                     );
                 })}
             </div>
-            <div className={styles.food_item_container}>
+            <div className={styles["food-item-container"]}>
                 {Object.entries(props.foodList).map(([key, value]) => {
                     return (
                         <FoodCard

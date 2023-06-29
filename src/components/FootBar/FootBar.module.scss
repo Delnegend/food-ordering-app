@@ -1,20 +1,21 @@
-@import "../../assets/GlobalVariables.scss";
+@import "../../assets/GlobalVariables";
 
 .footbar {
-    position: fixed;
+    width: 100%;
+    height: 60px;
+    background-color: white;
     bottom: 0;
     left: 0;
     margin: auto;
-    height: 60px;
-    width: 100%;
-    background-color: white;
+    position: fixed;
     z-index: 1;
 
     .fa-solid {
         color: #cacfd2;
-        transition-property: color, transform;
         transition-duration: 0.2s;
+        transition-property: color, transform;
         transition-timing-function: ease-in-out;
+
         &.active {
             color: #ff7f50;
             transform: scale(1.1);
@@ -22,16 +23,15 @@
     }
 
     .icon-list {
-        padding: 0;
-        margin: 0 auto;
-        height: 100%;
         width: var(--page-width);
-        max-width: var(--page-max-width);
-        list-style-type: none;
-
-        display: flex;
+        height: 100%;
         align-items: center;
+        display: flex;
         justify-content: space-around;
+        list-style-type: none;
+        margin: 0 auto;
+        max-width: var(--page-max-width);
+        padding: 0;
 
         li {
             margin: 0;
@@ -39,25 +39,25 @@
         }
 
         button {
-            position: relative;
             background-color: transparent;
             border: none;
             cursor: pointer;
+            position: relative;
             -webkit-tap-highlight-color: transparent;
 
             &::after {
-                content: "";
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background-color: transparent;
                 width: 60%;
                 height: 100%;
+                background-color: transparent;
+                border-radius: inherit;
+                content: "";
+                left: 50%;
                 opacity: 0;
+                position: absolute;
+                top: 50%;
+                transform: translate(-50%, -50%);
                 transition: opacity 0.3s ease-in-out;
                 z-index: -1;
-                border-radius: inherit;
             }
 
             &:hover::after {

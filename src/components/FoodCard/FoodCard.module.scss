@@ -1,51 +1,55 @@
-@import "../../assets/GlobalVariables.scss";
+@import "../../assets/GlobalVariables";
 
 .container {
     $font-large: 1.5rem;
     $font-small: 1.2rem;
 
-    margin: 10px;
-    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 15px 15px rgb(0 0 0 / 10%);
     display: flex;
     flex-direction: column;
-    border-radius: 20px;
-    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
+    margin: 10px;
     transition: transform 0.2s ease-in-out;
+    width: 100%;
+
     &:hover {
-        transform: scale(1.02);
         cursor: pointer;
+        transform: scale(1.02);
     }
+
     .image {
         width: 100%;
         height: 200px;
-        object-fit: cover;
         border-radius: 20px 20px 0 0;
+        object-fit: cover;
     }
 
     .body {
-        font-family: $font-primary;
         display: grid;
-        grid-template-rows: 1fr 1fr 1fr;
+        font-family: $font-primary;
         gap: 0.4rem;
+        grid-template-rows: 1fr 1fr 1fr;
+        margin: 1rem 1.5rem 1.3rem;
         max-width: 90%;
-        margin: 1rem 1.5rem 1.3rem 1.5rem;
 
         .foodname {
+            color: $color-dark;
             font-size: $font-large;
             font-weight: bold;
             justify-items: center;
-            color: $color-dark;
         }
 
         .info {
-            display: flex;
             align-items: center;
+            color: $color-dark;
+            display: flex;
             gap: 0.4rem;
             justify-items: center;
-            color: $color-dark;
+
             i {
                 color: $color-primary;
             }
+
             span {
                 color: $color-gray;
             }
@@ -54,11 +58,12 @@
         .taglist {
             display: flex;
             gap: 0.5rem;
+
             .tag {
                 background-color: #f1f1f1;
-                padding: 5px 8px;
                 border-radius: 0.5rem;
                 color: $color-gray;
+                padding: 5px 8px;
             }
         }
     }

@@ -1,72 +1,79 @@
-@import "../../assets/GlobalVariables.scss";
+@import "../../assets/GlobalVariables";
 
 .container {
     $image-size: 7rem;
     $font-small: 1.2rem;
     $font-large: 1.5rem;
 
-    width: 100%;
+    align-items: center;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 1.8rem 0;
     gap: 1.2rem;
+    justify-content: space-between;
+    margin: 1.8rem 0;
+    width: 100%;
 
     .cartcard-image {
         width: $image-size;
         height: $image-size;
-        object-fit: cover;
         border-radius: 1.5rem;
         box-shadow: $drop-shadow;
+        object-fit: cover;
     }
+
     .cartcard-info {
-        width: 100%;
         display: flex;
-        justify-content: space-between;
         flex-direction: column;
         font-family: $font-primary;
+        justify-content: space-between;
+        width: 100%;
 
         .cartcard-title-and-close-btn {
+            align-items: flex-start;
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
             width: 100%;
 
             .cartcard-title {
+                color: $color-dark;
                 font-size: $font-large;
                 font-weight: 900;
-                color: $color-dark;
             }
+
             .cartcard-close-btn {
-                border: none;
                 background-color: transparent;
-                transition: transform 0.2s ease-in-out;
+                border: none;
                 cursor: pointer;
                 -webkit-tap-highlight-color: transparent;
+                transition: transform 0.2s ease-in-out;
+
                 &:hover {
                     transform: scale(1.1);
                 }
+
                 i {
                     color: $color-dark;
                     font-size: $font-small;
                 }
             }
         }
+
         .cartcard-topping {
-            font-size: $font-small;
             color: $color-gray;
+            font-size: $font-small;
             margin-bottom: 1.2rem;
         }
+
         .cartcard-price-quantity {
+            align-items: center;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            align-items: center;
+
             .cartcard-price {
+                color: $color-primary;
                 font-size: $font-small;
                 font-weight: 900;
-                color: $color-primary;
             }
         }
     }

@@ -1,89 +1,99 @@
-@import "../assets/GlobalVariables.scss";
+@import "../assets/GlobalVariables";
 
 .container {
     $font-large: 1.5rem;
     $font-small: 1.2rem;
 
-    width: var(--page-width);
-    max-width: var(--page-max-width);
-    margin: 0 auto $footbar-height auto;
-
-    display: flex;
-    justify-content: space-between;
     align-items: center;
+    display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto $footbar-height auto;
+    max-width: var(--page-max-width);
     min-height: calc(100vh - $footbar-height);
-    .cart-container__top {
+    width: var(--page-width);
+
+    .cart-container-top {
         width: 100%;
+
         .cart-total {
+            align-items: center;
             display: flex;
             justify-content: space-between;
-            align-items: center;
             width: 100%;
+
             .cart-total-text {
+                color: $color-dark;
                 font-family: $font-primary;
                 font-size: $font-large;
-                color: $color-dark;
             }
+
             .cart-total-price {
+                color: $color-dark;
                 font-family: $font-primary;
                 font-size: $font-large;
                 font-weight: 900;
-                color: $color-dark;
+
                 &::after {
-                    content: " VNĐ";
                     color: $color-gray;
+                    content: " VNĐ";
                     font-weight: normal;
                 }
             }
         }
     }
-    .cart-container__bottom {
-        width: 100%;
+
+    .cart-container-bottom {
+        align-items: center;
         display: flex;
         justify-content: center;
-        align-items: center;
+        width: 100%;
+
         .cart-checkout-btn {
-            border: none;
-            font-family: $font-primary;
-            border-radius: 9999px;
             background-color: $color-primary;
+            border: none;
+            border-radius: 9999px;
             color: white;
-            padding: 1rem 4rem;
-            text-transform: uppercase;
-            margin: 2.2rem 0 2rem 0;
-            font-weight: bold;
-            font-size: $font-small;
-            transition-property: background-color, transform;
-            transition-duration: 0.2s;
-            transition-timing-function: ease-in-out;
             cursor: pointer;
+            font-family: $font-primary;
+            font-size: $font-small;
+            font-weight: bold;
+            margin: 2.2rem 0 2rem;
+            padding: 1rem 4rem;
             -webkit-tap-highlight-color: transparent;
+            text-transform: uppercase;
+            transition-duration: 0.2s;
+            transition-property: background-color, transform;
+            transition-timing-function: ease-in-out;
+
             &:hover {
                 background-color: lightsalmon;
                 transform: scale(1.05);
             }
         }
     }
+
     .cart-empty {
-        &.cart-container__top,
-        &.cart-container__bottom {
+        &.cart-container-top,
+        &.cart-container-bottom {
             display: none;
         }
     }
-    .cart-container__empty:not(.cart-empty) {
-        display: none;
-    }
-    .cart-container__empty {
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+
+    .cart-container-empty {
         width: 100%;
         height: calc(100vh - $footbar-height);
-        font-size: $font-large * 1.5;
-        font-family: $font-primary;
-        font-weight: bold;
+        align-items: center;
         color: $color-dark;
+        display: flex;
+        font-family: $font-primary;
+        font-size: $font-large * 1.5;
+        font-weight: bold;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .cart-container-empty:not(.cart-empty) {
+        display: none;
     }
 }

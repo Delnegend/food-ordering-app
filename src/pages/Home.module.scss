@@ -1,41 +1,46 @@
-@import "../assets/GlobalVariables.scss";
+@import "../assets/GlobalVariables";
 
 .container {
-    width: var(--page-width);
-    max-width: var(--page-max-width);
-    margin: 1.6rem auto $footbar-height auto;
-    display: flex;
     align-items: center;
+    display: flex;
     flex-direction: column;
-    .label_container {
+    margin: 1.6rem auto $footbar-height auto;
+    max-width: var(--page-max-width);
+    width: var(--page-width);
+
+    .label-container {
         display: flex;
         gap: 1rem;
         grid-template-columns: 1fr 1fr 1fr;
         margin-bottom: 1rem;
-        @media (max-width: 400px) {
+
+        @media (width <= 400px) {
             div:nth-child(1) {
                 grid-column: 1 / span 2;
             }
+
             grid-template: 1fr 1fr / 1fr 1fr;
         }
     }
-    .welcome_message {
-        width: 100%;
-        font-size: $welcome_message_font_size;
-        font-family: $welcome_message_font, sans-serif;
+
+    .welcome-message {
+        color: $color-dark;
+        font-family: $welcome-message-font, sans-serif;
+        font-size: $welcome-message-font-size;
         font-weight: 900;
         margin: 1.6rem 0;
-        text-transform: capitalize;
         text-align: left;
-        color: $color-dark;
-    }
-    .food_item_container {
-        display: flex;
+        text-transform: capitalize;
         width: 100%;
-        flex-direction: column;
+    }
+
+    .food-item-container {
         align-items: center;
-        justify-items: center;
+        display: flex;
+        flex-direction: column;
         gap: 1rem;
+        justify-items: center;
         margin-bottom: 1rem;
+        width: 100%;
     }
 }
