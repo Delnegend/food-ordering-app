@@ -63,7 +63,7 @@
         font-size: $font-size-small;
 
         span:nth-child(1) {
-            color: $color-main;
+            color: $color-primary;
         }
     }
 
@@ -78,7 +78,7 @@
             font-size: $font-size-large;
             font-family: $font-primary;
             font-weight: bold;
-            color: $color-main;
+            color: $color-primary;
 
             &::after {
                 content: " VNĐ";
