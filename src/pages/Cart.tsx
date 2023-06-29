@@ -14,6 +14,8 @@ type CartProps = {
     foodList: FoodList;
     cartItems: CartList;
     emptyCartText: string;
+    checkOutText: string;
+    totalText: string;
     setCartItems: (uuid: string, quantity: number) => void;
 };
 
@@ -67,7 +69,7 @@ export default function Cart(props: CartProps) {
                 </div>
                 <div className={styles["cart-total"]}>
                     <span className={styles["cart-total-text"]}>
-                        Tổng cộng:
+                        {props.totalText}
                     </span>
                     <span className={styles["cart-total-price"]}>
                         {readablePrice(
@@ -83,7 +85,7 @@ export default function Cart(props: CartProps) {
                     className={styles["cart-checkout-btn"]}
                     onClick={checkOut}
                 >
-                    Thanh toán
+                    {props.checkOutText}
                 </button>
             </div>
             <div

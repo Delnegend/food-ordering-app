@@ -57,11 +57,16 @@ export default function App() {
         cartItems: cartItems,
         setCartItems: setCartItems,
         emptyCartText: "Chưa có món nào trong giỏ hàng",
+        checkOutText: "Thanh toán",
+        totalText: "Tổng cộng",
     };
 
     const foodDetailsPageData: FoodDetailsProps = {
         cartItems: cartItems,
         foodList: food_mock_data,
+        etaText: "Thời gian chuẩn bị:",
+        addToCartText: "Thêm vào giỏ hàng",
+        minuteText: "phút",
         addCartItems: addCartItems,
     };
 
