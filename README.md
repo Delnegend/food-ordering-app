@@ -58,7 +58,9 @@ git config --global pull.rebase true
 
 ## Development requirements
 
-Install `pnpm`. This repository mainly uses `pnpm` (as shown by the pnpm-lock.yaml file) but you can use anything. `pnpm` simply gives the sanest defaults and the best performance. If you use anything else (`npm` or `yarn`), please add their respective lockfiles - package-lock.json and yarn.lock into the .gitignore file.
+This repository uses `pnpm` (as shown by the pnpm-lock.yaml file). `pnpm` simply gives the sanest defaults and the best performance.
+
+Some scripts depend on `pnpm` and will not work with `npm` or `yarn` so you must use `pnpm` for this repository.
 
 -   Installing `pnpm` if you haven't already:
 
