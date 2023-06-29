@@ -40,10 +40,13 @@
             }
             .cartcard-close-btn {
                 border: none;
-                border-radius: 9999px;
                 background-color: transparent;
+                transition: transform 0.2s ease-in-out;
                 cursor: pointer;
                 -webkit-tap-highlight-color: transparent;
+                &:hover {
+                    transform: scale(1.1);
+                }
                 i {
                     color: $color-dark;
                     font-size: $font-small;
