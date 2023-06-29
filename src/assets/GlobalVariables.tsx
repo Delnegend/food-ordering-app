@@ -12,7 +12,7 @@ const readablePrice = (price: number) => {
         }
     }
 
-    return result + "đ";
+    return result;
 };
 
 const vibrateDuration = 6;
