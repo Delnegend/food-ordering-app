@@ -64,7 +64,6 @@
                 backdrop-filter: blur(10px);
                 background-color: rgba(255, 255, 255, 0.9);
                 padding: $ham-padding-vertical $ham-padding-horizontal;
-                // enable vertical scroll
                 overflow-y: auto;
             }
         }
@@ -106,7 +105,6 @@
             list-style-type: none;
             padding: 0;
             margin: 1.8rem 0;
-
             li {
                 padding: 0;
                 margin: 0;
@@ -178,16 +176,11 @@
             }
 
             .log-out-icon {
-                // margin-left: 5px;
-                // margin-right: 10px;
-                // margin-top: 0;
                 color: #ff7f50;
                 background-color: white;
-                // display: inline-flex;
                 align-items: center;
                 justify-content: center;
                 border-radius: 9999px;
-                // background-color: white;
                 padding: 0.5rem;
                 font-size: 1rem;
                 line-height: 1 !important;
