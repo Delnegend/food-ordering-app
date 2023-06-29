@@ -42,6 +42,8 @@
                 border: none;
                 border-radius: 9999px;
                 background-color: transparent;
+                cursor: pointer;
+                -webkit-tap-highlight-color: transparent;
                 i {
                     color: $color-dark;
                     font-size: $font-small;
