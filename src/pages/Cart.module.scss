@@ -30,6 +30,11 @@
                 font-size: $font-large;
                 font-weight: 900;
                 color: $color-dark;
+                &::after {
+                    content: " VNĐ";
+                    color: $color-gray;
+                    font-weight: normal;
+                }
             }
         }
     }
