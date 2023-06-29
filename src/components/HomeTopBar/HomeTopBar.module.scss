@@ -24,11 +24,15 @@
             justify-content: center;
             width: $hamburger_and_profile_size;
             height: $hamburger_and_profile_size;
+            transition-property: background-color, transform;
+            transition-duration: 0.2s;
+            transition-timing-function: ease-in-out;
             cursor: pointer;
             -webkit-tap-highlight-color: transparent;
 
             &:hover {
                 background-color: #cacfd2;
+                transform: scale(1.05);
             }
         }
 
@@ -129,14 +133,14 @@
                 align-items: center;
                 justify-content: center;
                 background-color: transparent;
-                transition: background-color 0.3s ease-in-out;
+                transition: transform 0.3s ease-in-out;
                 i {
                     display: flex;
                     justify-content: center;
                     align-items: center;
                 }
                 &:hover {
-                    background-color: rgba(0, 0, 0, 0.1);
+                    transform: scale(1.05);
                 }
 
                 span {
@@ -165,8 +169,12 @@
             bottom: 0;
             cursor: pointer;
             -webkit-tap-highlight-color: transparent;
+            transition-property: background-color, transform;
+            transition-duration: 0.2s;
+            transition-timing-function: ease-in-out;
             &:hover {
                 background-color: lightsalmon;
+                transform: scale(1.05);
             }
 
             .log-out-icon {
