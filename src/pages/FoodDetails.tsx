@@ -1,6 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import { readablePrice } from "../assets/GlobalVariables";
-import { vibrateDuration, maxQuantityPerItem } from "../assets/GlobalVariables";
+
+import {
+    readablePrice,
+    vibrateDuration,
+    maxQuantityPerItem,
+} from "../assets/GlobalVariables";
 import { FoodList } from "../components/FoodCard/FoodCard";
 import QuantitySelector from "../components/QuantitySelector/QuantitySelector";
 
@@ -59,7 +63,9 @@ export default function FoodDetails(props: FoodDetailsProps) {
                     <span>{props.minuteText}</span>
                 </div>
                 <div className={styles["details-price-quantity"]}>
-                    <div className={styles["details-price"]}>{readablePrice(food.price)}</div>
+                    <div className={styles["details-price"]}>
+                        {readablePrice(food.price)}
+                    </div>
                     <QuantitySelector
                         maxQuantity={maxQuantity.current}
                         quantity={quantity}
