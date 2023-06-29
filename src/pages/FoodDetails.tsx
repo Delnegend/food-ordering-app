@@ -37,8 +37,9 @@ export default function FoodDetails(props: FoodDetailsProps) {
 
     return (
         <div className={styles.container}>
-            <div className={styles["details-container__top"]}>
-                <div className={styles["details-image__container"]}>
+            {/* region: top-section */}
+            <div>
+                <div className={styles["details-image-container"]}>
                     <img
                         className={styles["details-image"]}
                         src={food.image}
@@ -76,7 +77,10 @@ export default function FoodDetails(props: FoodDetailsProps) {
                     {food.description}
                 </div>
             </div>
-            <div className={styles["details-container__bottom"]}>
+            {/* endregion */}
+
+            {/* region: bottom-section */}
+            <div>
                 <button
                     className={styles["add-to-cart-button"]}
                     onClick={() => {
@@ -93,6 +97,7 @@ export default function FoodDetails(props: FoodDetailsProps) {
                     </span>
                 </button>
             </div>
+            {/* endregion */}
         </div>
     );
 }

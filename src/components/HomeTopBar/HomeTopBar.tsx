@@ -63,16 +63,11 @@ export default function HomeTopBar({
         avatarElement = <img src={avatarUrl} />;
     }
 
-    let avatarHamFAClass = styles["avatar-fa"];
-    if (avatarUrl) {
-        avatarHamFAClass = "";
-    }
-
     return (
         <div className={styles.container}>
-            <div className={styles["hamburger__container"]}>
+            <div className={styles["hamburger-container"]}>
                 <button
-                    className={styles["hamburger__button"]}
+                    className={styles["hamburger-button"]}
                     onClick={() => {
                         setActiveHamburger(!isHamburgerMenuActive);
                         navigator.vibrate(vibrateDuration);
@@ -83,27 +78,27 @@ export default function HomeTopBar({
 
                 <nav className={isHamMenuActiveClass} ref={hamMenuRef}>
                     <div
-                        className={styles["hamburger-inner__container"]}
+                        className={styles["hamburger-inner-container"]}
                         ref={hamMenuInnerRef}
                     >
-                        <div className={styles["hamburger-top__container"]}>
-                            <div
-                                className={styles["hamburger-info__container"]}
-                            >
+                        <div className={styles["hamburger-top-container"]}>
+                            <div className={styles["hamburger-info-container"]}>
                                 <span
-                                    className={`${styles["hamburger-info__avatar"]} ${avatarHamFAClass}`}
+                                    className={`${
+                                        styles["hamburger-info-avatar"]
+                                    } ${avatarUrl ? "" : styles["avatar-fa"]}`}
                                 >
                                     {avatarElement}
                                 </span>
                                 <span
                                     className={
-                                        styles["hamburger-info__username"]
+                                        styles["hamburger-info-username"]
                                     }
                                 >
                                     {userName}
                                 </span>
                                 <span
-                                    className={styles["hamburger-info__email"]}
+                                    className={styles["hamburger-info-email"]}
                                 >
                                     {userEmail}
                                 </span>
@@ -148,9 +143,9 @@ export default function HomeTopBar({
                 </nav>
             </div>
 
-            <div className={styles.app_name_container}>{appName}</div>
+            <div className={styles["app-name-container"]}>{appName}</div>
 
-            <div className={styles.avatar_container}>{avatarElement}</div>
+            <div className={styles["avatar-container"]}>{avatarElement}</div>
         </div>
     );
 }

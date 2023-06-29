@@ -1,96 +1,105 @@
-@import "../../assets/GlobalVariables.scss";
+@import "../../assets/GlobalVariables";
 
 .container {
-    width: var(--page-width);
-    max-width: var(--page-max-width);
-    margin: 0 0 $footbar-height 0;
-
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
+    margin: 0 0 $footbar-height 0;
+    max-width: var(--page-max-width);
+    width: var(--page-width);
 
     .image {
-        margin-top: 10px;
-        margin-left: 10px;
-        margin-right: 10px;
         width: 100px;
         height: 100px;
-        object-fit: cover;
         border-radius: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+        object-fit: cover;
     }
+
     .foodname {
+        flex-grow: 1;
         font-size: 20px;
         font-weight: bold;
-        flex-grow: 1;
     }
+
     .price {
-        position: absolute;
-        margin-top: 10px;
-        margin-left: 300px;
+        color: #ff523b;
         font-size: 20px;
         font-weight: 600;
-        color: #ff523b;
+        margin-left: 300px;
+        margin-top: 10px;
+        position: absolute;
     }
-    .price:after {
+
+    .price::after {
         content: "đ";
     }
+
     .text {
-        margin-top: 10px;
-        margin-left: 5px;
         color: gray;
-    }
-    .time {
-        margin-top: 5px;
         margin-left: 5px;
+        margin-top: 10px;
+    }
+
+    .time {
         font-size: 50px;
         font-weight: bold;
+        margin-left: 5px;
+        margin-top: 5px;
     }
+
     .cancel {
         color: black;
         font-size: 20px;
         font-weight: 500;
         user-select: none;
     }
+
     .track {
         color: white;
         font-size: 20px;
         font-weight: 500;
         user-select: none;
     }
+
     .cancel-button {
-        cursor: pointer;
-        background-color: white;
-        margin-top: 20px;
-        margin-left: 20px;
-        margin-right: 50px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border: none;
-        padding: 5px;
-        border-radius: 20px;
         width: 150px;
         height: 50px;
-        box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
+        align-items: center;
+        background-color: white;
+        border: none;
+        border-radius: 20px;
+        box-shadow: 0 15px 15px rgb(0 0 0 / 10%);
+        cursor: pointer;
+        display: inline-flex;
+        justify-content: center;
+        margin-left: 20px;
+        margin-right: 50px;
+        margin-top: 20px;
+        padding: 5px;
     }
+
     .cancel-button:hover {
         background-color: #cacfd2;
     }
+
     .track-button {
-        cursor: pointer;
-        background-color: #ff7f50;
-        margin-top: 20px;
-        margin-left: 10px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border: none;
-        padding: 5px;
-        border-radius: 20px;
         width: 150px;
         height: 50px;
-        box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
+        align-items: center;
+        background-color: #ff7f50;
+        border: none;
+        border-radius: 20px;
+        box-shadow: 0 15px 15px rgb(0 0 0 / 10%);
+        cursor: pointer;
+        display: inline-flex;
+        justify-content: center;
+        margin-left: 10px;
+        margin-top: 20px;
+        padding: 5px;
     }
+
     .track-button:hover {
         background-color: lightsalmon;
     }

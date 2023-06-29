@@ -52,7 +52,7 @@ export default function Cart(props: CartProps) {
     return (
         <div className={styles.container}>
             <div
-                className={`${styles["cart-container__top"]} ${emptyCartClass}`}
+                className={`${styles["cart-container-top"]} ${emptyCartClass}`}
             >
                 <div className={styles["cart-items"]}>
                     {Object.entries(props.cartItems).map(([uuid, quantity]) => {
@@ -81,7 +81,7 @@ export default function Cart(props: CartProps) {
                 </div>
             </div>
             <div
-                className={`${styles["cart-container__bottom"]} ${emptyCartClass}`}
+                className={`${styles["cart-container-bottom"]} ${emptyCartClass}`}
             >
                 <button
                     className={styles["cart-checkout-btn"]}
@@ -91,7 +91,7 @@ export default function Cart(props: CartProps) {
                 </button>
             </div>
             <div
-                className={`${styles["cart-container__empty"]} ${emptyCartClass}`}
+                className={`${styles["cart-container-empty"]} ${emptyCartClass}`}
             >
                 <span className={styles["cart-empty-text"]}>
                     {props.emptyCartText}

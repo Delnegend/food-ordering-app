@@ -2,29 +2,25 @@
     --page-width: 85%;
     --page-max-width: 450px;
 }
-@media screen and (max-width: 400px) {
+
+@media screen and (width <= 400px) {
     :root {
         --page-width: 90%;
     }
 }
 
 $footbar-height: 60px;
-
-$drop_shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
-
+$drop-shadow: 0 15px 15px rgb(0 0 0 / 10%);
 $font-primary: "SVN-Sofia Pro";
-
 $color-primary: #fe724c;
 $color-alt: #ffc529;
 $color-dark: #1a1d26;
 $color-gray: #9a9fae;
-
-$app_name_font: $font-primary;
-$app_name_font_size: 1.4rem;
-$welcome_message_font: $font-primary;
-$welcome_message_font_size: 3rem;
-
-$hamburger_menu_font: $font-primary;
+$app-name-font: $font-primary;
+$app-name-font-size: 1.4rem;
+$welcome-message-font: $font-primary;
+$welcome-message-font-size: 3rem;
+$hamburger-menu-font: $font-primary;
 
 body {
     margin: 0;

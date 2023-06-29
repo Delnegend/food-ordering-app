@@ -19,7 +19,7 @@ export type { LabelProps };
 export default function Label(props: LabelProps) {
     const activeClass =
         props.currentActiveLabel === props.type
-            ? styles["label__container--active"]
+            ? styles["label-container-active"]
             : "";
 
     const handleActiveLabel = () => {
@@ -39,10 +39,10 @@ export default function Label(props: LabelProps) {
 
     return (
         <button
-            className={`${styles["label__container"]} ${activeClass}`}
+            className={`${styles["label-container"]} ${activeClass}`}
             onClick={handleActiveLabel}
         >
-            <div className={styles["label-icon__container"]}>
+            <div className={styles["label-icon-container"]}>
                 <i className={`fa-solid ${props.faIcon}`}></i>
             </div>
             <div className={styles["label-text"]}>{props.name}</div>

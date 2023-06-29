@@ -1,7 +1,7 @@
-@import "../assets/GlobalVariables.scss";
+@import "../assets/GlobalVariables";
 
 .container {
-    width: var(--page-width);
-    max-width: var(--page-max-width);
     margin: 0 auto $footbar-height auto;
+    max-width: var(--page-max-width);
+    width: var(--page-width);
 }

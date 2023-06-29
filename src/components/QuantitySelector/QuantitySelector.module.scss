@@ -1,48 +1,48 @@
-@import "../../assets/GlobalVariables.scss";
+@import "../../assets/GlobalVariables";
 
 .container {
+    align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
 
     $button-size: 2rem;
     $font-size-small: 1.2rem;
 
     button {
-        border: none;
-        border-radius: 9999px;
         width: $button-size;
         height: $button-size;
+        align-items: center;
+        border: none;
+        border-radius: 9999px;
+        cursor: pointer;
         display: flex;
         justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        transition: opacity 0.2s ease-in-out;
         -webkit-tap-highlight-color: transparent;
+        transition: opacity 0.2s ease-in-out;
 
         &:disabled {
-            opacity: 0.5;
             cursor: not-allowed;
+            opacity: 0.5;
         }
     }
 
-    .button__remove {
-        color: $color-primary;
+    .button-remove {
         background-color: white;
         border: 1px solid $color-primary;
+        color: $color-primary;
     }
 
-    .button__add {
-        color: white;
+    .button-add {
         background-color: $color-primary;
+        color: white;
     }
 
     .quantity {
+        color: $color-dark;
         font-family: $font-primary;
         font-size: $font-size-small;
-        width: 2rem;
         text-align: center;
-        color: $color-dark;
+        width: 2rem;
     }
 }
