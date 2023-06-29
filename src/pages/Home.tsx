@@ -4,14 +4,21 @@ import HomeTopBar from "../components/HomeTopBar/HomeTopBar";
 
 import styles from "./Home.module.scss";
 
+type LabelPropsWithoutActiveLabel = Omit<
+    LabelProps,
+    "currentActiveLabel" | "setCurrentActiveLabel"
+>;
+
 type HomePageProps = {
     foodList: FoodList;
-    foodTypes: LabelProps[];
+    foodTypes: LabelPropsWithoutActiveLabel[];
     welcome_message: string;
     appName: string;
     avatarUrl: string;
     userName: string;
     userEmail: string;
+    currentActiveLabel: string;
+    setCurrentActiveLabel: (label: string) => void;
 };
 
 export type { HomePageProps };
@@ -36,6 +43,8 @@ export default function Home(props: HomePageProps) {
                             name={value.name}
                             type={value.type}
                             faIcon={value.faIcon}
+                            currentActiveLabel={props.currentActiveLabel}
+                            setCurrentActiveLabel={props.setCurrentActiveLabel}
                         />
                     );
                 })}
