@@ -4,6 +4,7 @@ import SlideRoutes from "react-slide-routes";
 
 import food_mock_data from "./_SAMPLE_DATA/food_mock.json";
 import { foodDetailPath } from "./assets/GlobalVariables";
+import { FoodList } from "./components/FoodCard/FoodCard";
 import FootBar, { FootbarProps } from "./components/FootBar/Footbar";
 import Cart, { CartList, CartProps } from "./pages/Cart";
 import FoodDetails, { FoodDetailsProps } from "./pages/FoodDetails";
@@ -13,6 +14,11 @@ import SignIn from "./pages/SignIn";
 
 export default function App() {
     const [cartItems, _setCartItems] = useState<CartList>({});
+    const [currentActiveLabel, setCurrentActiveLabel] = useState<string>("");
+    const [filteredFoodList, setFilteredFoodList] = useState<FoodList>({});
+    useEffect(() => {
+        setFilteredFoodList(food_mock_data);
+    }, []);
 
     const setCartItems = (uuid: string, quantity: number) => {
         if (quantity < 0) return;
@@ -34,10 +40,9 @@ export default function App() {
         });
     };
 
-    const [currentActiveLabel, setCurrentActiveLabel] = useState<string>("");
-
     const homePageData: HomePageProps = {
-        foodList: food_mock_data,
+        foodList: filteredFoodList,
+        foodListUnfiltered: food_mock_data,
         foodTypes: [
             { name: "Bánh", faIcon: "fa-baguette", type: "bread" },
             { name: "Xôi", faIcon: "fa-bowl-rice", type: "rice" },
@@ -54,6 +59,8 @@ export default function App() {
         userEmail: "",
         currentActiveLabel: currentActiveLabel,
         setCurrentActiveLabel: setCurrentActiveLabel,
+        filteredFoodList: filteredFoodList,
+        setFilteredFoodList: setFilteredFoodList,
     };
 
     const cartPageData: CartProps = {
