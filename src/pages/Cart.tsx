@@ -32,13 +32,15 @@ export default function Cart(props: CartProps) {
 
     const checkOut = () => {
         navigator.vibrate(vibrateDuration);
-        alert(
-            Object.entries(props.cartItems).map(([uuid, quantity]) => {
-                return `\n${props.foodList[uuid].name} x ${quantity} = ${
-                    props.foodList[uuid].price * quantity
-                }`;
-            })
-        );
+        setTimeout(() => {
+            alert(
+                Object.entries(props.cartItems).map(([uuid, quantity]) => {
+                    return `\n${props.foodList[uuid].name} x ${quantity} = ${
+                        props.foodList[uuid].price * quantity
+                    }`;
+                })
+            );
+        }, vibrateDuration);
     };
 
     const [isCartEmpty, setIsCartEmpty] = useState<boolean>(true);
