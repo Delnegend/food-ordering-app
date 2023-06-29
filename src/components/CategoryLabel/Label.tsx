@@ -1,8 +1,12 @@
 import { vibrateDuration } from "../../assets/GlobalVariables";
+import { FoodList } from "../FoodCard/FoodCard";
 
 import styles from "./Label.module.scss";
 
 type LabelProps = {
+    foodList: FoodList;
+    filteredFoodList: FoodList;
+    setFilteredFoodList: (foodList: FoodList) => void;
     name: string;
     type: string;
     faIcon: string;
@@ -20,9 +24,17 @@ export default function Label(props: LabelProps) {
 
     const handleActiveLabel = () => {
         navigator.vibrate(vibrateDuration);
-        if (props.currentActiveLabel === props.type)
-            props.setCurrentActiveLabel("");
-        else props.setCurrentActiveLabel(props.type);
+        const type = props.currentActiveLabel === props.type ? "" : props.type;
+        props.setCurrentActiveLabel(type);
+
+        if (type === "") props.setFilteredFoodList(props.foodList);
+        else {
+            const filteredFoodList: FoodList = {};
+            Object.entries(props.foodList).forEach(([key, value]) => {
+                if (value.type === type) filteredFoodList[key] = value;
+            });
+            props.setFilteredFoodList(filteredFoodList);
+        }
     };
 
     return (

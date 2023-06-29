@@ -6,11 +6,16 @@ import styles from "./Home.module.scss";
 
 type LabelPropsWithoutActiveLabel = Omit<
     LabelProps,
-    "currentActiveLabel" | "setCurrentActiveLabel"
+    | "currentActiveLabel"
+    | "setCurrentActiveLabel"
+    | "filteredFoodList"
+    | "setFilteredFoodList"
+    | "foodList"
 >;
 
 type HomePageProps = {
     foodList: FoodList;
+    foodListUnfiltered: FoodList;
     foodTypes: LabelPropsWithoutActiveLabel[];
     welcome_message: string;
     appName: string;
@@ -19,6 +24,8 @@ type HomePageProps = {
     userEmail: string;
     currentActiveLabel: string;
     setCurrentActiveLabel: (label: string) => void;
+    filteredFoodList: FoodList;
+    setFilteredFoodList: (foodList: FoodList) => void;
 };
 
 export type { HomePageProps };
@@ -45,6 +52,9 @@ export default function Home(props: HomePageProps) {
                             faIcon={value.faIcon}
                             currentActiveLabel={props.currentActiveLabel}
                             setCurrentActiveLabel={props.setCurrentActiveLabel}
+                            filteredFoodList={props.filteredFoodList}
+                            setFilteredFoodList={props.setFilteredFoodList}
+                            foodList={props.foodListUnfiltered}
                         />
                     );
                 })}
