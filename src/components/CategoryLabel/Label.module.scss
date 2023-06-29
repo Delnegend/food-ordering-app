@@ -1,31 +1,50 @@
 @import "../../assets/GlobalVariables.scss";
 
-.label {
-    border-radius: 8px;
+.label__container {
+    $icon-size: 2rem;
+
+    border: none;
     height: auto;
-    padding: 8px 10px;
-    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 9999px;
+    padding: 0.5rem 0.5rem 1rem 0.5rem;
+    box-shadow: $drop-shadow;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    gap: 1rem;
+    background-color: white;
+    transition-property: background-color, transform;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 
-    &:hover {
-        background-color: #fe724c;
-
-        .text {
-            color: #fff;
+    &.label__container--active {
+        background-color: $color-primary;
+        transform: scale(1.1);
+        .label-text {
+            color: white;
         }
     }
 
-    .icon {
-        font-size: 20px;
+    .label-icon__container {
+        width: $icon-size;
+        height: $icon-size;
+        font-size: $icon-size;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        border-radius: 9999px;
+        padding: 1rem;
     }
 
-    .text {
+    .label-text {
+        margin: 1rem 0 0.5rem 0;
         font-size: 1rem;
-        white-space: nowrap;
+        width: $icon-size;
         font-family: $font-primary;
+        text-align: center;
+        transition: color 0.2s ease-in-out;
     }
 }
