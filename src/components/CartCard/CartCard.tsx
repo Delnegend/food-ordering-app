@@ -21,7 +21,9 @@ export default function CartCard(props: CartCardProps) {
     const totalPrice = props.foodList[props.uuid].price * props.quantity;
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container}
+            onClick={() => openFoodDetails(props.uuid)}
+        >
             <img
                 className={styles["cartcard-image"]}
                 src={props.foodList[props.uuid].image}

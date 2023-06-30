@@ -18,6 +18,11 @@
     transition-duration: 0.2s;
     transition-property: background-color, transform;
     transition-timing-function: ease-in-out;
+    
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+    }
 
     .label-text {
         font-family: $font-primary;
