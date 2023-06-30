@@ -7,6 +7,7 @@ import food_mock_data from "./_SAMPLE_DATA/food_mock.json";
 import { foodDetailPath } from "./assets/GlobalVariables";
 import { FoodList } from "./components/FoodCard/FoodCard";
 import FootBar, { FootbarProps } from "./components/FootBar/Footbar";
+import { HomeTopBarProps } from "./components/HomeTopBar/HomeTopBar";
 import Cart, { CartList, CartProps } from "./pages/Cart";
 import FoodDetails, { FoodDetailsProps } from "./pages/FoodDetails";
 import Home, { HomePageProps } from "./pages/Home";
@@ -41,6 +42,29 @@ export default function App() {
         });
     };
 
+    const homeTopBarData: HomeTopBarProps["path"] = {
+        "My Orders": {
+            icon: "fa-box",
+            path: "/",
+        },
+        "My Profile": {
+            icon: "fa-user",
+            path: "/",
+        },
+        "Delivery Address": {
+            icon: "fa-location-dot",
+            path: "/",
+        },
+        "Payment Methods": {
+            icon: "fa-wallet",
+            path: "/",
+        },
+        "Contact Us": {
+            icon: "fa-envelope",
+            path: "mailto:",
+        },
+    };
+
     const homePageData: HomePageProps = {
         foodList: filteredFoodList,
         foodListUnfiltered: food_mock_data,
@@ -52,6 +76,12 @@ export default function App() {
                 faIcon: "fa-bowl-chopsticks-noodles",
                 type: "noodle",
             },
+            { name: "Tất cả", faIcon: "fa-utensils", type: "all" },
+            { name: "Bánh", faIcon: "fa-baguette", type: "bread1" },
+            { name: "Xôi", faIcon: "fa-bowl-rice", type: "rice1" },
+            { name: "Xôi", faIcon: "fa-bowl-rice", type: "rice2" },
+            { name: "Xôi", faIcon: "fa-bowl-rice", type: "rice3" },
+            { name: "Xôi", faIcon: "fa-bowl-rice", type: "rice4" },
         ],
         welcome_message: "Hôm nay bạn muốn ăn gì?",
         appName: "UCC Food App",
@@ -62,6 +92,7 @@ export default function App() {
         setCurrentActiveLabel: setCurrentActiveLabel,
         filteredFoodList: filteredFoodList,
         setFilteredFoodList: setFilteredFoodList,
+        homeTopBarData: homeTopBarData,
     };
 
     const cartPageData: CartProps = {

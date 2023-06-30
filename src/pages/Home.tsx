@@ -2,7 +2,9 @@ import { useRef, useEffect } from "react";
 
 import Label, { LabelProps } from "../components/CategoryLabel/Label";
 import FoodCard, { FoodList } from "../components/FoodCard/FoodCard";
-import HomeTopBar from "../components/HomeTopBar/HomeTopBar";
+import HomeTopBar, {
+    HomeTopBarProps,
+} from "../components/HomeTopBar/HomeTopBar";
 
 import styles from "./Home.module.scss";
 
@@ -28,6 +30,7 @@ type HomePageProps = {
     setCurrentActiveLabel: (label: string) => void;
     filteredFoodList: FoodList;
     setFilteredFoodList: (foodList: FoodList) => void;
+    homeTopBarData: HomeTopBarProps["path"];
 };
 
 export type { HomePageProps };
@@ -72,6 +75,7 @@ export default function Home(props: HomePageProps) {
                     appName={props.appName}
                     userName={props.userName}
                     userEmail={props.userEmail}
+                    path={props.homeTopBarData}
                 />
                 <div className={styles["welcome-message"]}>
                     {props.welcome_message}

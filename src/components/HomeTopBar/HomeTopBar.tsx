@@ -9,25 +9,18 @@ type HomeTopBarProps = {
     avatarUrl: string;
     userName: string;
     userEmail: string;
+    path: {
+        [key: string]: {
+            icon: string;
+            path: string;
+        };
+    };
 };
 export type { HomeTopBarProps };
 
-export default function HomeTopBar({
-    appName,
-    avatarUrl,
-    userName,
-    userEmail,
-}: HomeTopBarProps) {
-    const subMenus = {
-        "My Orders": "fa-rectangle-list",
-        "My Profile": "fa-user",
-        "Delivery Address": "fa-location-dot",
-        "Payment Methods": "fa-wallet",
-        "Contact Us": "fa-envelope",
-    };
-
-    userName = userName ? userName : "Lorem Ipsum";
-    userEmail = userEmail ? userEmail : "example@example.com";
+export default function HomeTopBar(props: HomeTopBarProps) {
+    const userName = props.userName ? props.userName : "Lorem Ipsum";
+    const userEmail = props.userEmail ? props.userEmail : "example@example.com";
 
     const [isHamburgerMenuActive, setActiveHamburger] = useState(false);
     const hamMenuRef = useRef<HTMLDivElement>(null);
@@ -59,8 +52,8 @@ export default function HomeTopBar({
         : styles.inactive;
 
     let avatarElement = <i className="fa-solid fa-user fa-2xl"></i>;
-    if (avatarUrl) {
-        avatarElement = <img src={avatarUrl} />;
+    if (props.avatarUrl) {
+        avatarElement = <img src={props.avatarUrl} />;
     }
 
     return (
@@ -86,7 +79,11 @@ export default function HomeTopBar({
                                 <span
                                     className={`${
                                         styles["hamburger-info-avatar"]
-                                    } ${avatarUrl ? "" : styles["avatar-fa"]}`}
+                                    } ${
+                                        props.avatarUrl
+                                            ? ""
+                                            : styles["avatar-fa"]
+                                    }`}
                                 >
                                     {avatarElement}
                                 </span>
@@ -105,7 +102,7 @@ export default function HomeTopBar({
                             </div>
 
                             <ul className={`${styles["tab-list"]}`}>
-                                {Object.entries(subMenus).map(
+                                {Object.entries(props.path).map(
                                     ([key, value]) => {
                                         return (
                                             <li key={key}>
@@ -117,7 +114,7 @@ export default function HomeTopBar({
                                                     }
                                                 >
                                                     <i
-                                                        className={`fa-duotone ${value} fa-2xl`}
+                                                        className={`fa-duotone ${value.icon} fa-2xl`}
                                                     ></i>
                                                     <span>{key}</span>
                                                 </button>
@@ -143,7 +140,7 @@ export default function HomeTopBar({
                 </nav>
             </div>
 
-            <div className={styles["app-name-container"]}>{appName}</div>
+            <div className={styles["app-name-container"]}>{props.appName}</div>
 
             <div className={styles["avatar-container"]}>{avatarElement}</div>
         </div>
