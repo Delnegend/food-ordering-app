@@ -216,10 +216,7 @@
         box-shadow: $drop-shadow;
         display: flex;
         justify-content: center;
-        &:hover {
-            cursor: pointer;
-            transform: scale(1.05);
-        }
+
         .fa-user {
             color: rgb(94 94 94);
             font-size: 1rem;
