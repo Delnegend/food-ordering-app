@@ -1,6 +1,7 @@
-import { FoodItem } from "../FoodCard/FoodCard";
-import styles from "./AddOn.module.scss"
 import { readablePrice } from "../../assets/GlobalVariables";
+import { FoodItem } from "../FoodCard/FoodCard";
+
+import styles from "./AddOn.module.scss"
 
 
 
