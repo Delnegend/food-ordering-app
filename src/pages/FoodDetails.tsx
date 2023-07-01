@@ -8,6 +8,8 @@ import {
 import { FoodList } from "../components/FoodCard/FoodCard";
 import QuantitySelector from "../components/QuantitySelector/QuantitySelector";
 
+import  AddOn  from "../components/FoodDetails/AddOn";
+
 import styles from "./FoodDetails.module.scss";
 
 type FoodDetailsProps = {
@@ -76,6 +78,7 @@ export default function FoodDetails(props: FoodDetailsProps) {
                 <div className={styles["details-description"]}>
                     {food.description}
                 </div>
+                <AddOn {...props.foodList["497a38dd-d3a7-4c16-add1-7d18d1667632"]}/>
             </div>
             {/* endregion */}
 
