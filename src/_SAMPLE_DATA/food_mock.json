@@ -16,5 +16,13 @@
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "taglist": ["Trứng", "Thịt", "Xúc xích"],
         "image": "/src/_SAMPLE_DATA/miy.jpg"
+    },
+    "497a38dd-d3a7-4c16-add1-7d18d1667632":{
+        "name": "Trứng",
+        "price": 2000,
+        "prepare_time": 0,
+        "type": "ingredient",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "image": "/src/_SAMPLE_DATA/omlette.jpg"
     }
 }
