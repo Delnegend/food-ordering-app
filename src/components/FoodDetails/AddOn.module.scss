@@ -69,26 +69,6 @@
         }
     }
 
-    .details-price-quantity {
-        align-items: center;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin: 1.5rem 0 2rem;
-
-        .details-price {
-            color: $color-primary;
-            font-family: $font-primary;
-            font-size: $font-size-small;
-            font-weight: bold;
-
-            &::after {
-                content: " VNĐ";
-                font-size: $font-size-small;
-            }
-        }
-    }
-
     .details-description {
         color: $color-gray;
         font-family: $font-primary;
