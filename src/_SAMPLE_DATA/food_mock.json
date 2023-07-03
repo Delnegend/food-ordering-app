@@ -23,6 +23,7 @@
         "prepare_time": 0,
         "type": "ingredient",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "taglist": [],
         "image": "/src/_SAMPLE_DATA/omlette.jpg"
     }
 }
