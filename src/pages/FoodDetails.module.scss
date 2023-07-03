@@ -140,4 +140,15 @@
             text-transform: uppercase;
         }
     }
+
+    .optional-ingredients{
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .optional-ingredients-quantity{
+            margin: 56px 0 2rem;
+        }
+    }
 }

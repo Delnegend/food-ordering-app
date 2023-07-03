@@ -6,7 +6,7 @@ import {
     maxQuantityPerItem,
 } from "../assets/GlobalVariables";
 import { FoodList } from "../components/FoodCard/FoodCard";
-import  AddOn  from "../components/FoodDetails/AddOn";
+import AddOn from "../components/FoodDetails/AddOn";
 import QuantitySelector from "../components/QuantitySelector/QuantitySelector";
 
 import styles from "./FoodDetails.module.scss";
@@ -27,7 +27,7 @@ export type { FoodDetailsProps };
 export default function FoodDetails(props: FoodDetailsProps) {
     const uuid = window.location.pathname.split("/")[2];
     const food = props.foodList[uuid];
-    const [quantity, setQuantity] = useState(0);
+    const [foodQuantity, setQuantity] = useState(0);
     const maxQuantity = useRef(
         maxQuantityPerItem - (props.cartItems[uuid] ?? 0)
     );
@@ -70,15 +70,32 @@ export default function FoodDetails(props: FoodDetailsProps) {
                     </div>
                     <QuantitySelector
                         maxQuantity={maxQuantity.current}
-                        quantity={quantity}
+                        quantity={foodQuantity}
                         setQuantity={setQuantity}
                     />
                 </div>
                 <div className={styles["details-description"]}>
                     {food.description}
                 </div>
-                <div className="Addon">
-                    <AddOn {...props.foodList["497a38dd-d3a7-4c16-add1-7d18d1667632"]}/>
+                <div className={styles["optional-ingredients"]}>
+                    <AddOn
+                        {...props.foodList[
+                            "497a38dd-d3a7-4c16-add1-7d18d1667632"
+                        ]}
+                    />
+
+                    {/*This quantity selector lets the user choose how many of this topping they want
+                    (0 for not having the topping)
+                    
+                    TODO: make this quantity selector work
+                    */}
+                    <div className={styles["optional-ingredients-quantity"]}>
+                        <QuantitySelector
+                            maxQuantity={maxQuantity.current}
+                            quantity={foodQuantity}
+                            setQuantity={setQuantity}
+                        />
+                    </div>
                 </div>
             </div>
             {/* endregion */}
@@ -89,7 +106,7 @@ export default function FoodDetails(props: FoodDetailsProps) {
                     className={styles["add-to-cart-button"]}
                     onClick={() => {
                         window.history.back();
-                        props.addCartItems(uuid, quantity);
+                        props.addCartItems(uuid, foodQuantity);
                         navigator.vibrate(vibrateDuration);
                     }}
                 >
