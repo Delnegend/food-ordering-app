@@ -83,19 +83,6 @@ export default function FoodDetails(props: FoodDetailsProps) {
                             "497a38dd-d3a7-4c16-add1-7d18d1667632"
                         ]}
                     />
-
-                    {/*This quantity selector lets the user choose how many of this topping they want
-                    (0 for not having the topping)
-                    
-                    TODO: make this quantity selector work
-                    */}
-                    <div className={styles["optional-ingredients-quantity"]}>
-                        <QuantitySelector
-                            maxQuantity={maxQuantity.current}
-                            quantity={foodQuantity}
-                            setQuantity={setQuantity}
-                        />
-                    </div>
                 </div>
             </div>
             {/* endregion */}
