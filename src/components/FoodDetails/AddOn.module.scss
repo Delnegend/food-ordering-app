@@ -13,13 +13,13 @@
     $font-size-small: 1.2rem;
 
     .details-image-container {
+        width: 20%;
+        height: 20%;
         border-radius: 1rem;
         box-shadow: $drop-shadow;
         overflow: hidden;
         padding-top: 20%;
         position: relative;
-        width: 20%;
-        height: 20%;
 
         .details-image {
             width: 100%;
@@ -73,6 +73,17 @@
         color: $color-gray;
         font-family: $font-primary;
         font-size: $font-size-small;
+    }
+
+    .details-price{
+        color: $color-dark;
+        font-family: $font-primary;
+        justify-content: space-evenly;
+        margin: 1.75rem auto;
+    }
+
+    .details-quantity{
+        margin: 1.5rem 0;
     }
 
     .add-to-cart-button {
