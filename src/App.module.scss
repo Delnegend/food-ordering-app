@@ -1,0 +1,14 @@
+:root {
+  --page-width: 85%;
+  --page-max-width: 450px;
+}
+
+@media screen and (width <= 400px) {
+  :root {
+      --page-width: 90%;
+  }
+}
+
+body {
+  margin: 0;
+}
