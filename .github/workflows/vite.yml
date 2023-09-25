@@ -1,0 +1,20 @@
+name: Build with Vite
+on:
+  push:
+    branches: [ main ]
+jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+        steps:
+            -   uses: actions/checkout@v2
+            -   name: Install pnpm ⚡
+                run: npm install -g pnpm
+            -   name: Install dependencies 📦
+                run: pnpm install
+            -   name: Build 🛠️
+                run: pnpm build
+            -   name: Deploy 🚀
+                uses: JamesIves/github-pages-deploy-action@4.4.3
+                with:
+                    branch: gh-pages
+                    folder: dist
