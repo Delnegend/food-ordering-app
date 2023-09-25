@@ -81,15 +81,17 @@ export default function App() {
 		addCartItems,
 	};
 
+	const BASE = import.meta.env.BASE_URL;
+
 	const routesData: FootbarProps = [
-		{ icon: "fa-house", path: "/", page: <MainScreen {...homePageData} /> },
+		{ icon: "fa-house", path: BASE, page: <MainScreen {...homePageData} /> },
 		{
 			icon: "fa-cart-shopping",
-			path: "/cart",
+			path: BASE + "cart",
 			page: <CartScreen {...cartPageData} />,
 		},
-		{ icon: "fa-list", path: "/myorders", page: <OrderTrackingScreen /> },
-		{ icon: "fa-user", path: "/signin", page: <SignInScreen /> },
+		{ icon: "fa-list", path: BASE + "myorders", page: <OrderTrackingScreen /> },
+		{ icon: "fa-user", path: BASE + "signin", page: <SignInScreen /> },
 	];
 
 	const [localStorageCartWritable, setLocalStorageCartWritable] = useState(false);
@@ -118,7 +120,7 @@ export default function App() {
 	routes.push(
 		<Route
 			key={routesData.length}
-			path={`${foodDetailPath}:foodId`}
+			path={`${BASE}${foodDetailPath}:foodId`}
 			element={<FoodDetailScreen {...foodDetailsPageData} />}
 		/>
 	);

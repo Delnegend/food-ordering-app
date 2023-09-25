@@ -1,7 +1,7 @@
 import type { HomeTopBarProps } from "../components/HomeTopBar/HomeTopBar";
 import type { LabelItem } from "../components/Label";
 
-const foodDetailPath = "/food-details/";
+const foodDetailPath = "food-details/";
 
 const homeTopBarData: HomeTopBarProps["path"] = {
 	"Đơn hàng": {
