@@ -1,3 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--footbar-height: 60px;
+	--drop-shadow: 0 15px 15px rgb(0 0 0 / 10%);
+	--font-primary: "SVN-Sofia Pro";
+	--color-primary: #fe724c;
+	--color-alt: #ffc529;
+	--color-dark: #1a1d26;
+	--color-gray: #9a9fae;
+	--app-name-font: var(--font-primary);
+	--app-name-font-size: 1.4rem;
+	--welcome-message-font: var(--font-primary);
+	--welcome-message-font-size: 3rem;
+	--hamburger-menu-font: var(--font-primary);
+	--page-width: 85%;
+	--page-max-width: 450px;
+}
+
+@media screen and (width <= 400px) {
+	:root {
+		--page-width: 90%;
+	}
+}
+
 body {
-    font-family: "Open Sans", sans-serif;
+	font-family: "Open Sans", sans-serif;
+	margin: 0;
+}
+
+button {
+	-webkit-tap-highlight-color: transparent
 }

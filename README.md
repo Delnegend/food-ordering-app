@@ -1,79 +1,31 @@
 # UCC Food App UI
-
 The user interface for the UCC Food App.
 
-## Requirements
+## Getting started
 
--   [Node.js 18+ LTS](https://nodejs.org/en/)
-
-# Getting started
-
-## Installation
-
--   Clone the repository
--   Install dependencies
-    ```bash
-    pnpm i
-    ```
--   Build the project
-    ```bash
-    pnpm build
-    ```
--   Start the development server
-    ```bash
-    pnpm dev
-    ```
--   Build and run the production server
-    ```bash
-    pnpm build
-    pnpm preview
-    ```
-
-# Contributing Guide
+### Pre-requisites
+1. Install Node.js 18+ LTS and `pnpm`
+  - Using Node.js: `npm i -g pnpm`
+  - Using [Volta](https://volta.sh/): `volta install node@latest pnpm`
 
 ## Setting up the repository
-
-Clone this repository
-
--   If you're using `HTTPS`:
-    ```
-    git clone https://github.com/USTH-Coders-Club/UCC-Food-app-UI.git
-    ```
--   If you're using `SSH`:
-    ```
-    git clone git@github.com:USTH-Coders-Club/UCC-Food-app-UI.git
-    ```
-
-Change to `dev` branch
-
-```
-git checkout dev
-```
-
-Set your Git configuration to automatically rebase on pull. This will prevent merge commits from appearing in the repository, keeping the commit history clean.
-
-```
-git config --global pull.rebase true
-```
+- Clone this repository
+- Set your Git configuration to automatically rebase on pull. This will prevent merge commits from appearing in the repository, keeping the commit history clean.
+  ```
+  git config --global pull.rebase true
+  ```
+- Install dependencies:
+  ```
+  pnpm i
+  ```
+- Start development server:
+  ```
+  pnpm dev
+  ```
 
 ## Development requirements
+- Lint and format code before `git add` with `pnpm lint`.
+- Use `pnpm cz` to commit changes instead of `git commit`.
 
-This repository uses `pnpm` (as shown by the pnpm-lock.yaml file). `pnpm` simply gives the sanest defaults and the best performance.
-
-Some scripts depend on `pnpm` and will not work with `npm` or `yarn` so you must use `pnpm` for this repository.
-
--   Installing `pnpm` if you haven't already:
-
-    ```
-    npm i -g pnpm
-    ```
-
--   Installing dependencies:
-
-    ```
-    pnpm i
-    ```
-
--   Before committing, make sure to run `pnpm lint` to lint and format your code.
-
--   Every time you want to commit something, use `pnpm cz` after adding files with `git add`. This gives you an automated prompt to fill in the details of your commit, according to the [Conventional Commits](https://www.conventionalcommits.org/en/) format.
+# Resources
+- [Inspired Figma design](https://www.figma.com/embed?embed_host=notion&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FoZpC1xrjFs46Cnsn7vpRcn%2FFood-App---FoodHub-(Community)-(Community)%3Ftype%3Ddesign%26node-id%3D108-0%26t%3DTFMqf0SHoK4UMnrX-0)
