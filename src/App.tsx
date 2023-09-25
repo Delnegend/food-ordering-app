@@ -1,4 +1,4 @@
-import foodMockData from "./_SAMPLE_DATA/food_mock.json";
+import foodMockData from "../public/food_mock.json";
 import { foodDetailPath, homeTopBarData, foodTypes } from "./assets/store";
 import FootBar from "./components/Footbar";
 import CartScreen from "./pages/CartScreen";
@@ -81,7 +81,7 @@ export default function App() {
 		addCartItems,
 	};
 
-	const BASE = import.meta.env.BASE_URL;
+	const BASE = "/";
 
 	const routesData: FootbarProps = [
 		{ icon: "fa-house", path: BASE, page: <MainScreen {...homePageData} /> },

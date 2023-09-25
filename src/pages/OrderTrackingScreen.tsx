@@ -1,4 +1,4 @@
-import foodMockData from "../_SAMPLE_DATA/food_mock.json";
+import foodMockData from "../../public/food_mock.json";
 import { OrderStatus } from "../assets/store";
 import OrderCard from "../components/OrderCard";
 import type { FoodList } from "../components/FoodCard";
