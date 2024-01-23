@@ -81,7 +81,7 @@ export default function App() {
 		addCartItems,
 	};
 
-	const BASE = "/";
+	const BASE = "/food-ordering-app/";
 
 	const routesData: FootbarProps = [
 		{ icon: "fa-house", path: BASE, page: <MainScreen {...homePageData} /> },
