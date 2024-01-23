@@ -9,7 +9,7 @@ const foodMock: FoodList = {
 		description:
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		taglist: ["Trứng", "Thịt", "Xúc xích"],
-		image: "/banhmi.jpg",
+		image: "/food-ordering-app/banhmi.jpg",
 	},
 	"fef8b604-577e-4adc-98ce-c5fe98debbb6": {
 		name: "Mì Ý",
@@ -19,7 +19,7 @@ const foodMock: FoodList = {
 		description:
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		taglist: ["Trứng", "Thịt", "Xúc xích"],
-		image: "/miy.jpg",
+		image: "/food-ordering-app/miy.jpg",
 	},
 	"497a38dd-d3a7-4c16-add1-7d18d1667632": {
 		name: "Trứng",
@@ -29,7 +29,7 @@ const foodMock: FoodList = {
 		description:
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		taglist: [],
-		image: "/omlette.jpg",
+		image: "/food-ordering-app/omlette.jpg",
 	},
 };
 
