@@ -1,11 +1,8 @@
-import foodMockData from "../../public/food_mock.json";
 import { OrderStatus } from "../assets/store";
 import OrderCard from "../components/OrderCard";
-import type { FoodList } from "../components/FoodCard";
+import foodMock from "../foodMock";
 
 export default function OrderTrackingScreen() {
-	const foodMock: FoodList = foodMockData;
-
 	return (
 		<div className="mx-auto mb-[calc(var(--footbar-height)+2rem)] mt-6 flex w-[--page-width] max-w-[--page-max-width] flex-col gap-4">
 			{Object.entries(foodMock).map(([key, value]) => {

@@ -1,6 +1,6 @@
-import foodMockData from "../public/food_mock.json";
 import { foodDetailPath, homeTopBarData, foodTypes } from "./assets/store";
 import FootBar from "./components/Footbar";
+import foodMock from "./foodMock";
 import CartScreen from "./pages/CartScreen";
 import FoodDetailScreen from "./pages/FoodDetailScreen";
 import MainScreen from "./pages/MainScreen";
@@ -21,7 +21,7 @@ export default function App() {
 	const [filteredFoodList, setFilteredFoodList] = useState<FoodList>({});
 
 	useEffect(() => {
-		setFilteredFoodList(foodMockData);
+		setFilteredFoodList(foodMock);
 	}, []);
 
 	const setCartItems = (uuid: string, quantity: number) => {
@@ -57,7 +57,7 @@ export default function App() {
 
 	const homePageData: HomePageProps = {
 		foodList: filteredFoodList,
-		foodListUnfiltered: foodMockData,
+		foodListUnfiltered: foodMock,
 		foodTypes,
 		avatarUrl: "",
 		userName: "",
@@ -70,14 +70,14 @@ export default function App() {
 	};
 
 	const cartPageData: CartProps = {
-		foodList: foodMockData,
+		foodList: foodMock,
 		cartItems,
 		setCartItems,
 	};
 
 	const foodDetailsPageData: FoodDetailsProps = {
 		cartItems,
-		foodList: foodMockData,
+		foodList: foodMock,
 		addCartItems,
 	};
 
@@ -87,11 +87,11 @@ export default function App() {
 		{ icon: "fa-house", path: BASE, page: <MainScreen {...homePageData} /> },
 		{
 			icon: "fa-cart-shopping",
-			path: BASE + "cart",
+			path: `${BASE}cart`,
 			page: <CartScreen {...cartPageData} />,
 		},
-		{ icon: "fa-list", path: BASE + "myorders", page: <OrderTrackingScreen /> },
-		{ icon: "fa-user", path: BASE + "signin", page: <SignInScreen /> },
+		{ icon: "fa-list", path: `${BASE}myorders`, page: <OrderTrackingScreen /> },
+		{ icon: "fa-user", path: `${BASE}signin`, page: <SignInScreen /> },
 	];
 
 	const [localStorageCartWritable, setLocalStorageCartWritable] = useState(false);
